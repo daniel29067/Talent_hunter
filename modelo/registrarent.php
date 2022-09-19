@@ -25,7 +25,14 @@
 				//la variable  $mysqli viene de connect_db que lo traigo con el require("connect_db.php");
 				mysqli_query($mysqli,"INSERT INTO user VALUES('$id','$name','$email','$pass','$pais','$region','$deporte','','$foto',2,1)");
 				//echo 'Se ha registrado con exito';
-				echo ' <script language="javascript">alert("Entidad registrada con éxito");</script> ';
+				echo "<script>
+				
+				alert('Entidad registrada con éxito');
+				location.href='../vista/profile_ent.php';
+				
+				
+				
+				</script> ";
 
 			}
 		

@@ -1,31 +1,29 @@
 <!DOCTYPE html>
-<html>
-<title>TOTO TIRE|login</title>
+<html lang="en">
 <head>
-
-	<meta charset="utf-8">
-		<link rel="stylesheet" type="text/css" href="css/estilos.css">
-		<link rel="stylesheet" href="css/bootstrap.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talent Hunter|Login</title>
+    <link rel="shortcut icon" href="../vista/img/talent_hunter7-removebg-preview.png">
 </head>
-<body >
-	<center><div class="tit">
-		<div class="division">
-
-
-		<form action="../modelo/validar.php" method="post">
-
-		<table border="0">
-			<tr><td colspan="2"><h2 style="color: #000000; ">Inicio de sesión</h2></td></tr>
-		<tr><td><label style="font-size: 14pt"><b>usuario: </b></label></td>
-			<td width=80> <input class="form-group has-success" style="border-radius:15px;" type="text" name="user"></td></tr>
-		<tr><td><label style="font-size: 14pt"><b>Contraseña: </b></label></td>
-			<td witdh=80><input style="border-radius:15px;" type="password" name="password"></td></tr>
-		<tr><td></td>
-			<td width=80 align=center><input class="btn btn-primary" type="submit" value="Aceptar"></td>
-			</tr></tr></table>
-		</form>
-
-
-</div>
+<body>
+<img src="../vista/img/talent_hunter6.png"/> 
+    <form action="../modelo/validar.php"  method="post">
+        <ul>
+            <li>
+              <label for="mail">Correo electrónico:</label>
+              <input type="email" name="user_mail">
+            </li>
+            <li>
+              <label for="password">Password:</label>
+              <input type="password" name="user_passwd">
+            </li>
+            <li>
+                <input type="submit" name="signup" value="LogIn" />
+            </li>
+         </ul>
+    </form>
+  <a href="../controlador/registro.php">¿Nuevo usuario?Registrese</a>
 </body>
 </html>

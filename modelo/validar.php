@@ -16,8 +16,6 @@ session_start();
 	$sql2=mysqli_query($mysqli,"SELECT * FROM user WHERE email='$username'");
 	if($f2=mysqli_fetch_assoc($sql2)){
 
-
-		
 		if($pass==$f2['passwd']){
 			$_SESSION['id_user']=$f2['id_user'];
 			$_SESSION['email']=$f2['email'];
@@ -28,17 +26,24 @@ session_start();
 			echo "<script>
 					if($f2[id_rol]==1){
 						alert('BIENVENIDO DEPORTISTA') 
-			
+						location.href='../vista/profile_dep.php'
 					}
 					else{
 						alert('BIENVENIDA ENTIDAD')
+						location.href='../vista/profile_ent.php'
 					} </script>";
 			//location.href='../vista/indexadmin.php'
 
 			
 		}
+		else{
+			echo "<script>
+						alert('Contraseña Errada') 
+						location.href='../vista/index.php'
+					 </script>";
+		}
 	}
-else{
+	else{
 
 		echo '<script>alert("ESTE USUARIO NO EXISTE, PORFAVOR REGISTRESE PARA PODER INGRESAR")</script> ';
 

@@ -33,18 +33,18 @@
     <img src="..\vista\img\talent_hunter6.png"/>    
 <!-- formulario registro -->
 
-<form method="post" action="" enctype="multipart/form-data" >
+<form method="post" action="..\modelo\registrardep.php" enctype="multipart/form-data" >
   <fieldset>
     <legend  style="font-size: 18pt"><b>Registro</b></legend>
     <!--ID-->
     <div class="form-group">
       <label style="font-size: 14pt"><b>Id:</b></label>
-      <input type="text" name="id" placeholder="Ingresa tu Id" />
+      <input type="text" name="id" required placeholder="Ingresa tu Id" />
     </div>
     <!--NOMBRE-->
     <div class="form-group">
       <label style="font-size: 14pt"><b>Nombre:</b></label>
-      <input type="text" name="name" placeholder="Ingresa tu nombre" pattern="[A-Za-zÑñÁÉÍÓÚáéíóú\s]+" />
+      <input type="text" name="name" required placeholder="Ingresa tu nombre" pattern="[A-Za-zÑñÁÉÍÓÚáéíóú\s]+" />
     </div>
     <!--EMAIL-->
     <div class="form-group">
@@ -54,12 +54,12 @@
     <!--PASSWD-->
     <div class="form-group">
       <label style="font-size: 14pt; color: #000000;"><b>Password:</b></label>
-      <input type="password" name="pass" class="form-control"  placeholder="Ingresa contraseña" />
+      <input type="password" name="pass" class="form-control" required placeholder="Ingresa contraseña" />
     </div>
     <!--PAIS-->
     <div class="form-group">
       <label style="font-size: 14pt"><b>Pais:</b></label>
-        <select name="pais">
+        <select required name="pais">
             <?php 
                 // use a while loop to fetch data 
                 // from the $all_categories variable 
@@ -83,33 +83,29 @@
     <!--REGION-->
     <div class="form-group">
       <label style="font-size: 14pt"><b>Region:</b></label>
-      <input type="text" name="region" placeholder="Ingresa tu region" pattern="[A-Za-zÑñÁÉÍÓÚáéíóú\s]+" />
+      <input type="text" name="region" required placeholder="Ingresa tu region" pattern="[A-Za-zÑñÁÉÍÓÚáéíóú\s]+" />
     </div>
     <!--DEP-->
 	<div class="form-group">
       <label style="font-size: 14pt"><b>Deporte:</b></label>
-      <input type="text" name="deporte" placeholder="Ingresa el Deporte" pattern="[A-Za-zÑñÁÉÍÓÚáéíóú\s]+" />
+      <input type="text" name="deporte" required placeholder="Ingresa el Deporte" pattern="[A-Za-zÑñÁÉÍÓÚáéíóú\s]+" />
     </div>
     <!--POS-->
     <div class="form-group">
       <label style="font-size: 14pt"><b>Posicion:</b></label>
-      <input type="text" name="position" placeholder="Ingresa la posicion" pattern="[A-Za-zzÑñÁÉÍÓÚáéíóú\s]+" />
+      <input type="text" name="position" required placeholder="Ingresa la posicion" pattern="[A-Za-zzÑñÁÉÍÓÚáéíóú\s]+" />
     </div>
      <!--foto-->
      <div class="form-group">
       <label style="font-size: 14pt"><b>Foto perfil:</b></label>
       <input type="file" name="foto"  />
     </div>
-    <input  class="btn btn-danger" type="submit" name="submit" value="Registrarse"/>
+    <input  class="btn btn-danger" required type="submit" name="submit" value="Registrarse"/>
 
   </fieldset>
 </form>
 </div>
-<?php
-		if(isset($_POST['submit'])){
-			require("../modelo/registrardep.php");
-		}
-	?>
+
 <!--Fin formulario registro -->
 </body>
 </html>

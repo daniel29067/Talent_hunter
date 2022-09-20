@@ -10,6 +10,7 @@
 	$deporte=$_POST['deporte'];
 	$positio=$_POST['position'];
 	$foto= addslashes(file_get_contents($_FILES['foto']['tmp_name']));
+	$description=$_POST['description'];
 
 
 
@@ -24,11 +25,11 @@
 
 				//require("connect_db.php");
 				//la variable  $mysqli viene de connect_db que lo traigo con el require("connect_db.php");
-				mysqli_query($mysqli,"INSERT INTO user VALUES('$id','$name','$email','$pass','$pais','$region','$deporte','$position','$foto',1,1)");
+				mysqli_query($mysqli,"INSERT INTO user VALUES('$id','$name','$email','$pass','$pais','$region','$deporte','$position','$foto','$description',1,1)");
 				//echo 'Se ha registrado con exito';
 					echo "<script>
 						alert('Deportista registrado con éxito');
-						location.href='../vista/profile_dep.php'
+						location.href='../vista/index.php'
 					 </script>";
 
 			}

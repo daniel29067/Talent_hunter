@@ -18,11 +18,15 @@ if (@!$_SESSION['email']) {
     <?php
         include("../modelo/connect_db.php");
         
-        $query="SELECT profile_foto from user where id_user=$_SESSION[id_user]";
+        $query="SELECT * from user where id_user=$_SESSION[id_user]";
         $resultado=$mysqli->query($query);
         while ($row=$resultado->fetch_assoc()){
     ?>
-    <img height="100px" src="data:Image/png;base64,<?php echo base64_encode($row['profile_foto']) ?>"/>
+    
+    <img height="100px" src="data:Image/png;base64,<?php echo base64_encode($row['profile_foto']); ?>"/><br>
+    <a href="../controlador/config.php"><input type="button" name="conf" value="Configuracion" /></a>
+    <h2><?php echo $row['name']; ?></h2>
+    <h5><?php echo $row['description']; ?></h5>
     <?php
         }
     ?>

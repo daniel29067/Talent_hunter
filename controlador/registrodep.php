@@ -100,6 +100,11 @@
       <label style="font-size: 14pt"><b>Foto perfil:</b></label>
       <input type="file" name="foto"  />
     </div>
+    <!--descripción-->
+    <div class="form-group">
+      <label style="font-size: 14pt"><b>Descripción:</b></label>
+      <textarea name="description" rows="10" cols="50">Descripción</textarea>
+    </div>
     <input  class="btn btn-danger" required type="submit" name="submit" value="Registrarse"/>
 
   </fieldset>

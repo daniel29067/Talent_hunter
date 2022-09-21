@@ -20,6 +20,7 @@ session_start();
 			$_SESSION['id_user']=$f2['id_user'];
 			$_SESSION['email']=$f2['email'];
 			$_SESSION['id_rol']=$f2['id_rol'];
+			$_SESSION['pais']=$f2['pais'];
 
 			//echo '<script>alert("BIENVENIDO")</script> ';
 			

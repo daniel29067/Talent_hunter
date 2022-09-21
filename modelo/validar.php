@@ -18,9 +18,9 @@ session_start();
 
 		if($pass==$f2['passwd']){
 			$_SESSION['id_user']=$f2['id_user'];
-			$_SESSION['email']=$f2['email'];
-			$_SESSION['id_rol']=$f2['id_rol'];
+			$_SESSION['email']=$f2['email'];	
 			$_SESSION['pais']=$f2['pais'];
+			$_SESSION['id_rol']=$f2['id_rol'];
 
 			//echo '<script>alert("BIENVENIDO")</script> ';
 			
@@ -47,7 +47,6 @@ session_start();
 	else{
 
 		echo '<script>alert("ESTE USUARIO NO EXISTE, PORFAVOR REGISTRESE PARA PODER INGRESAR")</script> ';
-
 		echo "<script>location.href=:'../vista/index.php'</script>";
 
 	}

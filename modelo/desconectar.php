@@ -1,10 +1,19 @@
 <?php 
 session_start();
-if($_SESSION['user']){	
+
+
+if($_SESSION['email']){
 	session_destroy();
-	header("location:../vista/index.php");
+	echo "<script>
+					alert('Sesion Cerrada',location.href='../vista/index.php')
+				 </script>";
 }
+
 else{
-	header("location:../vista/index.php");
+
+	header('location:../vista/profile_dep.php');
+
 }
-?>ssss
+
+
+?>

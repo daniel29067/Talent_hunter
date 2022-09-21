@@ -33,7 +33,7 @@
     <img src="..\vista\img\talent_hunter6.png"/>    
 <!-- formulario registro -->
 
-<form method="post" action="..\modelo\registrardep.php" enctype="multipart/form-data" >
+<form method="post" action="..\modelo\registrarent.php" enctype="multipart/form-data" >
   <fieldset>
     <legend  style="font-size: 18pt"><b>Registro</b></legend>
     <!--ID-->

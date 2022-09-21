@@ -2,7 +2,7 @@
 <?php
 session_start();
 if (@!$_SESSION['email']) {
-	header("Location:index.php");
+	header("Location:../vista/index.php");
 }
 ?>
 <html lang="en">
@@ -20,7 +20,7 @@ if (@!$_SESSION['email']) {
         $query="SELECT * from user where id_user=$_SESSION[id_user]";
         $resultado=$mysqli->query($query);
         while ($row=$resultado->fetch_assoc()){
-    ?>
+    ?> 
     <img height="100px" src="data:Image/png;base64,<?php echo base64_encode($row['profile_foto']); ?>"/><br>   
     <a href="../controlador/configdep.php"><input type="button" name="conf" value="Configuracion" /></a>
     <h2><?php echo $row['name']; ?></h2>

@@ -42,6 +42,7 @@ if (@!$_SESSION['email']) {
               <input type="password" name="delete_passwd">
             </li>
             <li>
+                <a>hola</a>
                 <input type="submit" name="delete" value="delte" onclick="return Confirmdelete()"/>
             </li>
          </ul>

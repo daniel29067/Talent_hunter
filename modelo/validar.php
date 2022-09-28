@@ -46,8 +46,10 @@ session_start();
 	}
 	else{
 
-		echo '<script>alert("ESTE USUARIO NO EXISTE, PORFAVOR REGISTRESE PARA PODER INGRESAR")</script> ';
-		echo "<script>location.href=:'../vista/index.php'</script>";
+		echo "<script>alert('ESTE USUARIO NO EXISTE, PORFAVOR REGISTRESE PARA PODER INGRESAR')
+		location.href='../vista/index.php'
+		</script> ";
+		//echo "<script>location.href=:'../vista/index.php'</script>";
 
 	}
 

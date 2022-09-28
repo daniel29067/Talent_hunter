@@ -5,6 +5,21 @@ if (@!$_SESSION['email']) {
     header("Location:../vista/index.php");
 }
 ?>
+<script>
+    function Confirmlogout() {
+        var resp = confirm("¿Desea Cerrar la sesion?");
+        if (resp == true){
+
+            return true;
+        }
+        else {
+             return false;
+        }
+
+    }
+ 
+
+</script>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -33,6 +48,6 @@ if (@!$_SESSION['email']) {
         }
     ?>
     <a href="../vista/eliminar.php"><input type="button" name="delete" value="Eliminar cuenta" /></a>
-     <a href="../modelo/desconectar.php"><input type="button" name="logout" value="Logout" /></a>
+     <a href="../modelo/desconectar.php"><input type="button" name="logout" value="Logout" onclick="return Confirmlogout()"/></a>
 </body>
 </html>

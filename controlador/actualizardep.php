@@ -53,7 +53,7 @@ if (@!$_SESSION['email']) {
 											<!--EMAIL-->
 											<div class="form-group">
 											<label style="font-size: 14pt; color: #000000;"><b>email:</b></label>
-											<input type="email" name="email" class="form-control" required placeholder="ingresa tu email" value="<?php echo $row['email'];?>" />
+											<h5><?php echo $row['email']; ?></h5>
 											</div>
 											<!--PASSWD-->
 											<div class="form-group">

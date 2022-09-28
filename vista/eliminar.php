@@ -5,6 +5,27 @@ if (@!$_SESSION['email']) {
 	header("Location:../vista/index.php");
 }
 ?>
+<script>
+        function Confirmdelete() {
+        var resp = confirm("¿Desea eliminar su cuenta?");
+        if (resp == true){
+
+            return true;
+        }
+        else {
+            return false;
+            if($_SESSION['id_rol']==1){
+                location.href='../controlador/configdep.php';
+
+             }
+             else{
+                location.href='../controlador/configent.php';
+        }
+      
+
+    }
+    }
+</script>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -21,7 +42,7 @@ if (@!$_SESSION['email']) {
               <input type="password" name="delete_passwd">
             </li>
             <li>
-                <input type="submit" name="delete" value="delte" />
+                <input type="submit" name="delete" value="delte" onclick="return Confirmdelete()"/>
             </li>
          </ul>
     </form>

@@ -9,10 +9,10 @@ if (@!$_SESSION['email']) {
     function Confirmlogout() {
         var resp = confirm("¿Desea Cerrar la sesion?");
         if (resp == true){
-
             return true;
         }
         else {
+            location.href='../vista/profile_ent.php'
              return false;
         }
 

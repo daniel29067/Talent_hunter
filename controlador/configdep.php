@@ -13,12 +13,11 @@ if (@!$_SESSION['email']) {
             return true;
         }
         else {
+            location.href='../vista/profile_dep.php'
              return false;
         }
 
     }
- 
-
 </script>
 <html lang="en">
 <head>
@@ -48,7 +47,7 @@ if (@!$_SESSION['email']) {
     <?php
         }
     ?>
-    <a href="../vista/eliminar.php"><input type="button" name="delete" value="Eliminar cuenta" /></a>
+    <a href="../vista/eliminar.php"><input type="button" name="delete" value="Eliminar cuenta"/></a>
      <a href="../modelo/desconectar.php"><input type="button" name="logout" value="Logout" onclick="return Confirmlogout()"/></a>
 </body>
 </html>

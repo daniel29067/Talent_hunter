@@ -14,7 +14,7 @@ if($f2=mysqli_fetch_assoc($sql2)){
 		
 		mysqli_query($mysqli,$sql);
 		echo "<script>
-					alert('Contraseña Errada',location.href='../vista/index.php')
+					alert('Cuenta eliminada',location.href='../vista/index.php')
 				 </script>";
 		
 		

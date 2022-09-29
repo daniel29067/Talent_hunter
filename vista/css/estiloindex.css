@@ -1,0 +1,9 @@
+body{
+    background-color: #00ffff;
+    background: linear-gradient(to right,#04F9EA,#07CABE);
+}
+
+.bg{
+    background-image: url(../img/riders-republic-extreme-sports-6205.jpg);
+    background-position: center;
+}

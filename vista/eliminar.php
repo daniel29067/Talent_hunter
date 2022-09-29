@@ -21,7 +21,7 @@ if (@!$_SESSION['email']) {
              else{
                 location.href='../controlador/configent.php';
         }
-      
+        
 
     }
     }

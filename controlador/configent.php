@@ -17,8 +17,6 @@ if (@!$_SESSION['email']) {
         }
 
     }
- 
-
 </script>
 <html lang="en">
 <head>

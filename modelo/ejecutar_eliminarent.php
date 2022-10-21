@@ -25,7 +25,7 @@ if($f2=mysqli_fetch_assoc($sql2)){
 	else{
 		echo "<script>
 					alert('Contraseña Errada') 
-					location.href='../vista/eliminar.php'
+					location.href='../vista/eliminarent.php'
 				 </script>";
 	}
 }

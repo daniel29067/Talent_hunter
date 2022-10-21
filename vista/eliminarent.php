@@ -8,20 +8,15 @@ if (@!$_SESSION['email']) {
 <script>
         function Confirmdelete() {
         var resp = confirm("¿Desea eliminar su cuenta?");
+        
         if (resp == true){
 
             return true;
         }
         else {
-            return false;
-            if($_SESSION['id_rol']==1){
-                location.href='../controlador/configdep.php';
-
-             }
-             else{
-                location.href='../controlador/configent.php';
-        }
-        
+            
+        location.href='../vista/profile_ent.php'   
+       return false;
 
     }
     }
@@ -36,7 +31,7 @@ if (@!$_SESSION['email']) {
 </head>
 <body>
 <img src="../vista/img/talent_hunter6.png"/> 
-    <form action="../modelo/ejecutar_eliminar.php"  method="post">
+    <form action="../modelo/ejecutar_eliminarent.php"  method="post">
         <ul>
               <label for="password">Ingrese su contraseña para confirmar:</label>
               <input type="password" name="delete_passwd">

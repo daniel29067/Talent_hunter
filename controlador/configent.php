@@ -45,7 +45,7 @@ if (@!$_SESSION['email']) {
     <?php
         }
     ?>
-    <a href="../vista/eliminar.php"><input type="button" name="delete" value="Eliminar cuenta" /></a>
+    <a href="../vista/eliminarent.php"><input type="button" name="delete" value="Eliminar cuenta" /></a>
      <a href="../modelo/desconectar.php"><input type="button" name="logout" value="Logout" onclick="return Confirmlogout()"/></a>
 </body>
 </html>

@@ -39,7 +39,7 @@
           <div class="my-3">
             <span>¿Nuevo usuario? <a href="../controlador/registro.php">Registrese</a></span>
             <br>
-            <span><a href="#">Recuperar Password</a></span>
+            <span><a href="../vista/resetpass.php">Recuperar Password</a></span>
           </div>
         </form>
       </div>

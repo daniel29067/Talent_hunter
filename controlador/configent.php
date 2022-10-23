@@ -1,8 +1,34 @@
 <!DOCTYPE html>
 <?php
 session_start();
+if(!isset($_SESSION['start']))
+{
+
+    //Set the session start time
+
+    $_SESSION['start'] = time();
+
+}
 if (@!$_SESSION['email']) {
+	header("Location:../vista/index.php");
+}
+else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >10)) {
+
+    //Unset the session variables
+
+    session_unset();
+
+    //Destroy the session
+
+    session_destroy();
+    echo "<script>
+    alert('Sesion cerrada por inactividad') 
+ </script>";
     header("Location:../vista/index.php");
+    
+
+}
+
 }
 ?>
 <script>

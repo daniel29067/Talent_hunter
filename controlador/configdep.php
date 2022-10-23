@@ -12,7 +12,7 @@ if(!isset($_SESSION['start']))
 if (@!$_SESSION['email']) {
 	header("Location:../vista/index.php");
 }
-else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >10)) {
+else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
 
     //Unset the session variables
 

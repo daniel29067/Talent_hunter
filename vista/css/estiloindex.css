@@ -1,8 +1,8 @@
 body{
-    background: rgb(75, 74, 74);
+    background: linear-gradient(to right, rgb(99, 216, 208), rgb(9, 161, 151));
 }
 
 .bg{
-    background-image: url(../img/fondos-deportivos-en-vectores-gratis.jpg);
+    background-image: url(../img/depositphotos_39949813-stock-illustration-set-of-sport-icons-in.jpg);
     background-position: center;
 }

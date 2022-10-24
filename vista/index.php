@@ -19,7 +19,7 @@
         <div class="text-end">
           <img src="../vista/img/talent_hunter6.png" width="50" alt="">
         </div>
-        <h2 class="fw-bold text-center py-5">Bienvenidos</h2>
+        <h2 class="fw-bold text-center py-5">Bienvenido</h2>
         <form action="../modelo/validar.php" method="post">
 
           <div class="mb-4">
@@ -37,7 +37,7 @@
           </div>
 
           <div class="my-3">
-            <span>¿Nuevo usuario? <a href="../controlador/registro.php">Registrese</a></span>
+            <span>¿Nuevo usuario? <a href="../controlador/registro.php">Registrarse</a></span>
             <br>
             <span><a href="../vista/resetpass.php">Recuperar Password</a></span>
           </div>

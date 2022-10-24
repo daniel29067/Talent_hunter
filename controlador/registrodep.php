@@ -125,7 +125,7 @@
         </div>
 
         <div class="d-grid">
-          <input class="btn btn-danger" required type="submit" name="submit" value="Registrarse"/>
+          <input class="btn btn-secondary" required type="submit" name="submit" value="Registrarse"/>
         </div>
         
       </form>

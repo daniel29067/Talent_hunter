@@ -8,7 +8,7 @@
 	$pais=$_POST['pais'];
 	$region=$_POST['region'];	
 	$deporte=$_POST['deporte'];
-	$foto= addslashes(file_get_contents($_FILES['foto']['tmp_name']));
+	$foto= 'defect.jpg';//addslashes(file_get_contents($_FILES['foto']['tmp_name']));
 	$description=$_POST['description'];
 
 
@@ -24,7 +24,7 @@
 
 				//require("connect_db.php");
 				//la variable  $mysqli viene de connect_db que lo traigo con el require("connect_db.php");
-				mysqli_query($mysqli,"INSERT INTO user VALUES('$id','$name','$email','$pass','$pais','$region','$deporte','','$foto','$description',2,1)");
+				mysqli_query($mysqli,"INSERT INTO user VALUES('$id','$name','$email','$pass','$pais','$region','$deporte','','$foto','$description',0,2,1)");
 				//echo 'Se ha registrado con exito';
 				echo "<script>
 				

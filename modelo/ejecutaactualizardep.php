@@ -7,7 +7,7 @@ require("connect_db.php");
 	$pass=$_POST['pass'];
 	$deporte=$_POST['deporte'];
 	$position=$_POST['position'];
-	$foto= addslashes(file_get_contents($_FILES['foto']['tmp_name']));
+	$foto= 'defect.jpg';//addslashes(file_get_contents($_FILES['foto']['tmp_name']));
 	$description=$_POST['description'];
 
 

@@ -8,7 +8,7 @@ require("connect_db.php");
 	$pais=$_POST['pais'];
 	$region=$_POST['region'];	
 	$deporte=$_POST['deporte'];
-	$foto= addslashes(file_get_contents($_FILES['foto']['tmp_name']));
+	$foto= 'defect.jpg';//addslashes(file_get_contents($_FILES['foto']['tmp_name']));
 	$description=$_POST['description'];
 
 

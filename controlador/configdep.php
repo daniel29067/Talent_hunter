@@ -61,7 +61,7 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
         $resultado=$mysqli->query($query);
         while ($row=$resultado->fetch_assoc()){
     ?>
-    <img height="100px" src="data:Image/png;base64,<?php echo base64_encode($row['profile_foto']); ?>"/><br>  
+    <img height="100px" src="../vista/img/profile_photos/<?php echo $_SESSION['profile_foto']; ?>"/><br> 
     <h2><?php echo $row['name']; ?></h2>
     <h5><?php echo $row['id_user']; ?></h5>
     <h5><?php echo $row['email']; ?></h5>

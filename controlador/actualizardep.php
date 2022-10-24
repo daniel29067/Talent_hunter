@@ -108,7 +108,7 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
 											</div>
 											<!--foto-->
 											<div class="form-group">
-											<img height="100px" src="data:Image/png;base64,<?php echo base64_encode($row['profile_foto']); ?>"/><br>	
+											<img height="100px" src="../vista/img/profile_photos/<?php echo $_SESSION['profile_foto']; ?>"/><br> 
 											<label style="font-size: 14pt"><b>Foto perfil:</b></label>
 											<input type="file" name="foto"  />
 											</div>

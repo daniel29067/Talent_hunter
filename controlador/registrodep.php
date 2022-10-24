@@ -98,7 +98,7 @@
      <!--foto-->
      <div class="form-group">
       <label style="font-size: 14pt"><b>Foto perfil:</b></label>
-      <input type="file" name="foto"  />
+      <input required type="file" name="foto"  />
     </div>
     <!--descripción-->
     <div class="form-group">

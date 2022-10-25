@@ -14,12 +14,12 @@ $CantidadMostrar=5;
 	$consulta=mysqli_query($mysqli,$consultavistas);
 	while ($lista=mysqli_fetch_array($consulta)) {
 
-		$userid = mysqli_real_escape_string($mysqli,$lista['usuario']);
+		$userid = mysqli_real_escape_string($mysqli,$lista['id_user']);
 
-		$usuariob = mysqli_query($mysqli,"SELECT * FROM usuarios WHERE id_use = '$userid'");
+		$usuariob = mysqli_query($mysqli,"SELECT * FROM user WHERE id_user = '$userid'");
     $use = mysqli_fetch_array($usuariob);
 
-    $fotos = mysqli_query($mysqli,"SELECT * FROM fotos WHERE publicacion = '$lista[id_pub]'");
+    $fotos = mysqli_query($mysqli,"SELECT * FROM post WHERE id_pub = '$lista[id_pub]'");
     $fot = mysqli_fetch_array($fotos);
 	?>
 	<!-- START PUBLICACIONES -->
@@ -27,10 +27,10 @@ $CantidadMostrar=5;
           <div class="box box-widget">
             <div class="box-header with-border">
               <div class="user-block">
-                <img class="img-circle" src="avatars/<?php echo $use['avatar']; ?>" alt="User Image">
-                <span class="description" onclick="location.href='perfil.php?id=<?php echo $use['id_use'];?>';" style="cursor:pointer; color: #3C8DBC;""><?php echo $use['usuario'];?></span>
+                <img class="img-circle" src="../vista/img/profile_photos/<?php echo $use['profile_foto']; ?>" alt="User Image">
+               <span class="description" onclick="location.href='perfil.php?id=<?php echo $use['id_user'];?>';" style="cursor:pointer; color: #3C8DBC;""><?php echo $use['name'];?></span>
                 <span class="description"><?php echo $lista['fecha'];?></span>
-              </div>
+  </div>
               <!-- /.user-block -->
               <div class="box-tools">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -44,7 +44,7 @@ $CantidadMostrar=5;
               <p><?php echo $lista['contenido'];?></p>
 
               <?php 
-              if($lista['imagen'] != 0)
+              if($lista['post'] != 0)
               {
               ?>
               <img src="publicaciones/<?php echo $fot['ruta'];?>" width="100%">

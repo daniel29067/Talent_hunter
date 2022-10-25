@@ -38,6 +38,18 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Talent Hunter|Deportista</title>
     <link rel="shortcut icon" href="..\vista\img\talent_hunter7-removebg-preview.png">
+    <script src:"../js/jquery.jscroll.js"></script>
+    <style>
+      .scroll{
+        width:100%;
+      }
+
+      .scroll .jscroll-loading {
+        width:10%;
+        margin: -500px auto;
+
+      }
+    </style>
 </head>
 <body>
     <img src="..\vista\img\talent_hunter7.png"/>    
@@ -129,9 +141,27 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
 
                     $subir = mysqli_query($mysqli,"INSERT INTO post (id_user,fecha,contenido,post,comentarios) values ('".$_SESSION['id_user']."',now(),'$publicacion','$nombre','1')");
 
-                    if($subir) {echo '<script>window.location="../vista/profile_ent.php"</script>';}
+                    if($subir) {echo '<script>window.location="../vista/profile_dep.php"</script>';}
 
                   }      
-                  ?>    
+                  ?>   
+                  
+               <!-- codigo scroll -->
+          <div class="scroll">
+            <?php require_once '../controlador/publicaciones.php'; ?>
+          </div>
+
+            <script>
+            //Simple codigo para hacer la paginacion scroll
+            $(document).ready(function() {
+              $('.scroll').jscroll({
+                loadingHtml: '<img src="../vista/img/invisible.png" alt="Loading" />'
+            });
+            });
+            </script>
+          <!-- codigo scroll -->
+
+
+        </div>   
 </body>
 </html>

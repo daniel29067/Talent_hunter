@@ -28,7 +28,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Talent Hunter|Crear Entidad</title>
     <link rel="shortcut icon" href="..\vista\img\talent_hunter7-removebg-preview.png">
-    <link rel="stylesheet" href="../vista/css/estiloreent.css">
+    <link rel="stylesheet" href="../vista/css/estilogeneral.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 </head>
 <body>  
@@ -119,7 +119,7 @@
         </div>
 
         <div class="d-grid">
-          <input class="btn btn-secondary" required type="submit" name="submit" value="Registrarse"/>
+          <input class="btn btn-primary" required type="submit" name="submit" value="Registrarse"/>
         </div>
         
       </form>

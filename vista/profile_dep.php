@@ -38,6 +38,10 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Talent Hunter|Deportista</title>
     <link rel="shortcut icon" href="..\vista\img\talent_hunter7-removebg-preview.png">
+<<<<<<< HEAD
+    <link rel="stylesheet" href="../vista/css/estilogeneral.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+=======
     <script src:"../js/jquery.jscroll.js"></script>
     <style>
       .scroll{
@@ -50,23 +54,50 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
 
       }
     </style>
+>>>>>>> 458c30de09828fcefb639dbf98377f96d00b856e
 </head>
 <body>
-    <img src="..\vista\img\talent_hunter7.png"/>    
-    <?php
+
+  <nav class="navbar navbar-expand-md bg-white border border-1 border-secondary rounded-bottom shadow">
+
+    <div class="container-fluid px-5" id="enca">
+
+      <!-- icono -->
+      <span class="navbar-brand mb-0 h3">
+        <img src="../vista/img/2.png" alt="Logo" width="50" class="d-inline-block align-text-center rounded">
+      </span>
+
+      <!--boton del menu -->
+
+      
+
+      <?php
         include("../modelo/connect_db.php");
         $query="SELECT * from user where id_user=$_SESSION[id_user]";
         $resultado=$mysqli->query($query);
         while ($row=$resultado->fetch_assoc()){
-    ?> 
-    <!--<img height="100px" src="data:Image/png;base64,<?php echo base64_encode($row['profile_foto']); ?>"/><br>   --->
-     <img height="100px" src="../vista/img/profile_photos/<?php echo $_SESSION['profile_foto']; ?>"/><br> 
-    <a href="../controlador/configdep.php"><input type="button" name="conf" value="Configuracion" /></a>
-    <h2><?php echo $row['name']; ?></h2>
+      ?> 
+
+      <!-- boton configuracion -->
+
+      <a class="navbar-brand text-end" href="../controlador/configdep.php">
+        <!--<img height="100px" src="data:Image/png;base64,<?php echo base64_encode($row['profile_foto']); ?>"/>   --->
+        <img height="50px" class="rounded-circle" src="../vista/img/profile_photos/<?php echo $_SESSION['profile_foto']; ?>"/>&nbsp; <?php echo $row['name']; ?>
+      </a>
+
+    </div>
+
+  </nav>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    
+    
+    
     <h5><?php echo $row['description']; ?></h5>
     <?php
         }
-    ?>
+    ?> 
+    
          <!-- CAJA PUBLICACIONES -->
          <div class="col-md-12">              
               <div class="box box-primary direct-chat direct-chat-warning">
@@ -144,6 +175,10 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
                     if($subir) {echo '<script>window.location="../vista/profile_dep.php"</script>';}
 
                   }      
+<<<<<<< HEAD
+                  ?>
+                      
+=======
                   ?>   
                   
                <!-- codigo scroll -->
@@ -162,6 +197,11 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
           <!-- codigo scroll -->
 
 
+<<<<<<< HEAD
           </div>S
+=======
+        </div>   
+>>>>>>> 458c30de09828fcefb639dbf98377f96d00b856e
+>>>>>>> a448178a0435558205a20052254462d62803c178
 </body>
 </html>

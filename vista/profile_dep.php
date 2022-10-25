@@ -38,8 +38,23 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Talent Hunter|Deportista</title>
     <link rel="shortcut icon" href="..\vista\img\talent_hunter7-removebg-preview.png">
+<<<<<<< HEAD
     <link rel="stylesheet" href="../vista/css/estilogeneral.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+=======
+    <script src:"../js/jquery.jscroll.js"></script>
+    <style>
+      .scroll{
+        width:100%;
+      }
+
+      .scroll .jscroll-loading {
+        width:10%;
+        margin: -500px auto;
+
+      }
+    </style>
+>>>>>>> 458c30de09828fcefb639dbf98377f96d00b856e
 </head>
 <body>
 
@@ -157,10 +172,32 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
 
                     $subir = mysqli_query($mysqli,"INSERT INTO post (id_user,fecha,contenido,post,comentarios) values ('".$_SESSION['id_user']."',now(),'$publicacion','$nombre','1')");
 
-                    if($subir) {echo '<script>window.location="../vista/profile_ent.php"</script>';}
+                    if($subir) {echo '<script>window.location="../vista/profile_dep.php"</script>';}
 
                   }      
+<<<<<<< HEAD
                   ?>
                       
+=======
+                  ?>   
+                  
+               <!-- codigo scroll -->
+          <div class="scroll">
+            <?php require_once '../controlador/publicaciones.php'; ?>
+          </div>
+
+            <script>
+            //Simple codigo para hacer la paginacion scroll
+            $(document).ready(function() {
+              $('.scroll').jscroll({
+                loadingHtml: '<img src="../vista/img/invisible.png" alt="Loading" />'
+            });
+            });
+            </script>
+          <!-- codigo scroll -->
+
+
+        </div>   
+>>>>>>> 458c30de09828fcefb639dbf98377f96d00b856e
 </body>
 </html>

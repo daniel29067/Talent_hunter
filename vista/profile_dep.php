@@ -38,10 +38,8 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Talent Hunter|Deportista</title>
     <link rel="shortcut icon" href="..\vista\img\talent_hunter7-removebg-preview.png">
-<<<<<<< HEAD
     <link rel="stylesheet" href="../vista/css/estilogeneral.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-=======
     <script src:"../js/jquery.jscroll.js"></script>
     <style>
       .scroll{
@@ -54,8 +52,6 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
 
       }
     </style>
->>>>>>> 458c30de09828fcefb639dbf98377f96d00b856e
-</head>
 <body>
 
   <nav class="navbar navbar-expand-md bg-white border border-1 border-secondary rounded-bottom shadow">

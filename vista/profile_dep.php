@@ -175,7 +175,7 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
                     if($subir) {echo '<script>window.location="../vista/profile_dep.php"</script>';}
 
                   }      
-<<<<<<< HEAD
+
                   ?>
                       
 =======
@@ -197,11 +197,7 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
           <!-- codigo scroll -->
 
 
-<<<<<<< HEAD
           </div>S
-=======
         </div>   
->>>>>>> 458c30de09828fcefb639dbf98377f96d00b856e
->>>>>>> a448178a0435558205a20052254462d62803c178
 </body>
 </html>

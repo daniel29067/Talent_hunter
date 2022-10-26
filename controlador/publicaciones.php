@@ -44,12 +44,23 @@ $CantidadMostrar=5;
               <p><?php echo $lista['contenido'];?></p>
 
               <?php 
+              if($_SESSION['id_rol']==1){
+              if($lista['post'] != 0)
+              {
+              ?>
+              <video src="../vista/publicaciones/<?php echo $fot['post'];?>" width="100%">
+              <?php
+          	  }
+            }
+            elseif($_SESSION['id_rol']==2){
               if($lista['post'] != 0)
               {
               ?>
               <img src="../vista/publicaciones/<?php echo $fot['post'];?>" width="100%">
               <?php
           	  }
+
+            }
           	  ?>
 
               <br><br>

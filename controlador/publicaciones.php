@@ -10,16 +10,16 @@ $CantidadMostrar=5;
 	 //Operacion matematica para mostrar los siquientes datos.
 	$IncrimentNum =(($compag +1)<=$TotalRegistro)?($compag +1):0;
 	//Consulta SQL
-	$consultavistas ="SELECT * FROM post ORDER BY id_pub DESC LIMIT ".(($compag-1)*$CantidadMostrar).",".$CantidadMostrar;
+	$consultavistas ="SELECT * FROM post WHERE id_user=$_SESSION[id_user] ORDER BY id_pub DESC LIMIT ".(($compag-1)*$CantidadMostrar).",".$CantidadMostrar;
 	$consulta=mysqli_query($mysqli,$consultavistas);
 	while ($lista=mysqli_fetch_array($consulta)) {
 
-		$userid = mysqli_real_escape_string($mysqli,$lista['id_user']);
+		$userid = mysqli_real_escape_string($mysqli,$_SESSION['id_user']);
 
 		$usuariob = mysqli_query($mysqli,"SELECT * FROM user WHERE id_user = '$userid'");
     $use = mysqli_fetch_array($usuariob);
 
-    $fotos = mysqli_query($mysqli,"SELECT * FROM post WHERE id_pub = '$lista[id_pub]'");
+    $fotos = mysqli_query($mysqli,"SELECT * FROM post WHERE id_pub = '$lista[id_pub]'and id_user=$_SESSION[id_user]");
     $fot = mysqli_fetch_array($fotos);
 	?>
 	<!-- START PUBLICACIONES -->
@@ -47,22 +47,22 @@ $CantidadMostrar=5;
               if($lista['post'] != 0)
               {
               ?>
-              <img src="publicaciones/<?php echo $fot['ruta'];?>" width="100%">
+              <img src="../vista/publicaciones/<?php echo $fot['post'];?>" width="100%">
               <?php
           	  }
           	  ?>
 
               <br><br>
               <?php 
-              $numcomen = mysql_num_rows(mysql_query("SELECT * FROM comentarios WHERE publicacion = '".$lista['id_pub']."'"));
+              $numcomen = mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM comentarios WHERE publicacion = '".$lista['id_pub']."'"));
               ?>
               <!-- Social sharing buttons -->
             <ul class="list-inline">
 
               <?php
-              $query = mysql_query("SELECT * FROM likes WHERE post = '".$lista['id_pub']."' AND usuario = ".$_SESSION['id']."");
+              $query = mysqli_query($mysqli,"SELECT * FROM likes WHERE post = '".$lista['id_pub']."' AND usuario = ".$_SESSION['id_user']."");
 
-              if (mysql_num_rows($query) == 0) { ?>
+              if (mysqli_num_rows($query) == 0) { ?>
 
                 <li><div class="btn btn-default btn-xs like" id="<?php echo $lista['id_pub']; ?>"><i class="fa fa-thumbs-o-up"></i> Me gusta </div><span id="likes_<?php echo $lista['id_pub']; ?>"> (<?php echo $lista['likes']; ?>)</span></li>
 
@@ -83,10 +83,10 @@ $CantidadMostrar=5;
             <div class="box-footer box-comments">
 
             <?php 
-            $comentarios = mysql_query("SELECT * FROM comentarios WHERE publicacion = '".$lista['id_pub']."' ORDER BY id_com desc LIMIT 2");
-            while($com=mysql_fetch_array($comentarios)){
-              $usuarioc = mysql_query("SELECT * FROM usuarios WHERE id_use = '".$com['usuario']."'");
-              $usec = mysql_fetch_array($usuarioc);
+            $comentarios = mysqli_query($mysqli,"SELECT * FROM comentarios WHERE publicacion = '".$lista['id_pub']."' ORDER BY id_com desc LIMIT 2");
+            while($com=mysqli_fetch_array($comentarios)){
+              $usuarioc = mysqli_query($mysqli,"SELECT * FROM usuarios WHERE id_use = '".$com['usuario']."'");
+              $usec = mysqli_fetch_array($usuarioc);
               ?>
 
 

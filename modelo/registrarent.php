@@ -14,7 +14,7 @@
 
 	if(isset($_POST['submit'])) 
                   {
-				  $perfil=mysqli_real_escape_string($mysqli,$_POST['file']);
+				  $perfil=mysqli_real_escape_string($mysqli,$_POST['foto']);
 				  $result = mysqli_query($mysqli,"SHOW TABLE STATUS WHERE `Name` = 'user'");
 				  $data = mysqli_fetch_assoc($result);
 				  $next_increment = $data['Auto_increment'];
@@ -46,7 +46,7 @@ else{
 
 				else
 				{
-				  $nombre = '';
+					$nombre = 'defect.jpg';
 				}
 
 

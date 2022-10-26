@@ -1,16 +1,17 @@
+
 <?php
 include("../modelo/connect_db.php");
 $CantidadMostrar=5;
      // Validado  la variable GET
     $compag=(int)(!isset($_GET['pag'])) ? 1 : $_GET['pag']; 
-	$TotalReg=mysqli_query($mysqli,"SELECT * FROM post where id_user=$_SESSION[id_user]");
+	$TotalReg=mysqli_query($mysqli,"SELECT * FROM post ");
 	$totalr = mysqli_num_rows($TotalReg);
 	//Se divide la cantidad de registro de la BD con la cantidad a mostrar 
 	$TotalRegistro  =ceil($totalr/$CantidadMostrar);
 	 //Operacion matematica para mostrar los siquientes datos.
 	$IncrimentNum =(($compag +1)<=$TotalRegistro)?($compag +1):0;
 	//Consulta SQL
-	$consultavistas ="SELECT * FROM post WHERE id_user=$_SESSION[id_user] ORDER BY id_pub DESC LIMIT ".(($compag-1)*$CantidadMostrar).",".$CantidadMostrar;
+	$consultavistas ="SELECT * FROM post ORDER BY id_pub DESC LIMIT ".(($compag-1)*$CantidadMostrar).",".$CantidadMostrar;
 	$consulta=mysqli_query($mysqli,$consultavistas);
 	while ($lista=mysqli_fetch_array($consulta)) {
 
@@ -19,7 +20,7 @@ $CantidadMostrar=5;
 		$usuariob = mysqli_query($mysqli,"SELECT * FROM user WHERE id_user = '$userid'");
     $use = mysqli_fetch_array($usuariob);
 
-    $fotos = mysqli_query($mysqli,"SELECT * FROM post WHERE id_pub = '$lista[id_pub]'and id_user=$_SESSION[id_user]");
+    $fotos = mysqli_query($mysqli,"SELECT * FROM post WHERE id_pub = '$lista[id_pub]'");
     $fot = mysqli_fetch_array($fotos);
 	?>
 	<!-- START PUBLICACIONES -->
@@ -149,6 +150,6 @@ $CantidadMostrar=5;
 	//Validmos el incrementador par que no genere error
 	//de consulta.  
     if($IncrimentNum<=0){}else {
-	echo "<a href=\"publicaciones.php?pag=".$IncrimentNum."\">Seguiente</a>";
+	echo "<a href=\"../vista/publicaciones.php?pag=".$IncrimentNum."\">Seguiente</a>";
 	}
 ?>

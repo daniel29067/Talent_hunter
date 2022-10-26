@@ -41,7 +41,6 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
     <link rel="stylesheet" href="../vista/css/estiloprodep.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <script src:"../js/jquery.jscroll.js"></script>
-<<<<<<< HEAD
     <style>
       .scroll{
         width:100%;
@@ -54,8 +53,6 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
       }
     </style>
 </head>
-=======
->>>>>>> 43d4454da34f7dc557bcad0e3c935e9a5f37b6f0
 <body>
 
 <nav class="navbar bg-light fixed-top">

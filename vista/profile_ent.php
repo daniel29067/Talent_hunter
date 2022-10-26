@@ -135,7 +135,7 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
                     $alea = substr(strtoupper(md5(microtime(true))), 0,12);
                     $code = $next_increment.$alea;
 
-                    $type = 'mp4';
+                    $type = 'jpg';
                     $rfoto = $_FILES['foto']['tmp_name'];
                     $name = $code.".".$type;
 

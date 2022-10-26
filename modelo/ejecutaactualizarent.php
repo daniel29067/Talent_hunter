@@ -23,7 +23,7 @@ require("connect_db.php");
 				//echo 'Se ha registrado con exito';
 					echo "<script>
 						alert('Deportista Actualizado con éxito');
-						location.href='../vista/perfilpriv.php?id=<?php echo $_SESSION[id_user];?>'
+						location.href='../vista/perfilpriv.php?id=<?php $_SESSION[id_user];?>'
 					 </script>";
 
 			

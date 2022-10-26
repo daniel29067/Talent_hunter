@@ -41,17 +41,18 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
     <link rel="stylesheet" href="../vista/css/estiloprodep.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <script src:"../js/jquery.jscroll.js"></script>
-    <style>
-      .scroll{
-        width:100%;
-      }
+        <style>
+            .scroll {
+                width: 100%;
+            }
 
-      .scroll .jscroll-loading {
-        width:10%;
-        margin: -500px auto;
+            .scroll .jscroll-loading {
+                width: 10%;
+                margin: -500px auto;
 
-      }
-    </style>
+            }
+        </style>
+    </head>
 </head>
 <body>
 
@@ -168,12 +169,22 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
                     $alea = substr(strtoupper(md5(microtime(true))), 0,12);
                     $code = $next_increment.$alea;
 
-                    $type = 'mp4';
+                    
                     $rfoto = $_FILES['foto']['tmp_name'];
-                    $name = $code.".".$type;
-
-                    if(is_uploaded_file($rfoto))
-                    {
+                    $formatos_permitidos =  array('mp4','mov' ,'wmv','avi');
+                    $archivo = $_FILES['foto']['name'];
+                    $extension = pathinfo($archivo, PATHINFO_EXTENSION);
+                    if(!in_array($extension, $formatos_permitidos) ) {
+                        echo  "<script>
+                        alert('Error formato no permitido !!') 
+                       </script>";
+                      }
+                      else{
+                      
+                                          if(is_uploaded_file($rfoto))
+                                          {
+                                          $type=$extension;
+                                            $name = $code.".".$type;
                       $destino = "../vista/publicaciones/".$name;
                       $nombre = $name;
                       copy($rfoto, $destino);
@@ -205,7 +216,8 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
 
                     if($subir) {echo '<script>window.location="../vista/profile_dep.php"</script>';}
 
-                  }      
+                  }    
+                }  
 
                   ?>
                       
@@ -217,11 +229,11 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
             <?php require_once '../controlador/publicaciones.php'; ?>
           </div>
 
-            <script>
+          <script>
             //Simple codigo para hacer la paginacion scroll
             $(document).ready(function() {
               $('.scroll').jscroll({
-                loadingHtml: '<img src="../vista/img/invisible.png" alt="Loading" />'
+                loadingHtml: '<img src="images/invisible.png" alt="Loading" />'
             });
             });
             </script>
@@ -229,6 +241,7 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
 
 
           </div>
+
         </div>
        
 </body>

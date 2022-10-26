@@ -135,12 +135,22 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
                     $alea = substr(strtoupper(md5(microtime(true))), 0,12);
                     $code = $next_increment.$alea;
 
-                    $type = 'jpg';
+                    
                     $rfoto = $_FILES['foto']['tmp_name'];
-                    $name = $code.".".$type;
+                    $formatos_permitidos =  array('bmp','gif' ,'jpg','jpeg','png','blob');
+                    $archivo = $_FILES['foto']['name'];
+                    $extension = pathinfo($archivo, PATHINFO_EXTENSION);
+                    if(!in_array($extension, $formatos_permitidos) ) {
+                        echo  "<script>
+                        alert('Error formato no permitido !!') 
+                       </script>";
+                    }
+else{
 
                     if(is_uploaded_file($rfoto))
                     {
+                    $type=$extension;
+                      $name = $code.".".$type;
                       $destino = "../vista/publicaciones/".$name;
                       $nombre = $name;
                       copy($rfoto, $destino);
@@ -172,7 +182,8 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
 
                     if($subir) {echo '<script>window.location="../vista/profile_ent.php"</script>';}
 
-                  }      
+                  }    
+                }  
 
                   ?>
                       

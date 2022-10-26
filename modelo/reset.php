@@ -22,7 +22,7 @@
   <div>
     <p>Reestablecer contraseña</p>
     <h3>su contraseña es: </h3>
-    <?php echo $row[passwd]; ?>
+   <h4> <?php echo $row[passwd]; ?></h4>
     <p>Si no pidio el cambio por favor omitir</p>
   </div>
 

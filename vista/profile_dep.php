@@ -111,7 +111,7 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
 
       <!-- boton configuracion -->
 
-      <a class="navbar-brand ms-auto" href="../controlador/configdep.php">
+      <a class="navbar-brand ms-auto" href="../vista/perfilpriv.php?id=<?php echo $_SESSION['id_user'];?>';">
         <!--<img height="100px" src="data:Image/png;base64,<?php echo base64_encode($row['profile_foto']); ?>"/>   --->
         <img height="30px" class="rounded-circle" src="../vista/img/profile_photos/<?php echo $_SESSION['profile_foto']; ?>"/>&nbsp; <?php echo $row['name']; ?>
       </a>
@@ -171,12 +171,14 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
 
                     
                     $rfoto = $_FILES['foto']['tmp_name'];
-                    $formatos_permitidos =  array('mp4','mov' ,'wmv','avi');
+                    $formatos_permitidos =  array('mp4','mov' ,'wmv','avi',' ');
                     $archivo = $_FILES['foto']['name'];
                     $extension = pathinfo($archivo, PATHINFO_EXTENSION);
                     if(!in_array($extension, $formatos_permitidos) ) {
                         echo  "<script>
                         alert('Error formato no permitido !!') 
+                        
+                        alert('Recuerde Siempre subir un video!!') 
                        </script>";
                       }
                       else{

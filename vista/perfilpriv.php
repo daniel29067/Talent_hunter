@@ -26,6 +26,19 @@ if (@!$_SESSION['email']) {
     }
 }
 ?>
+<script>
+    function Confirmlogout() {
+        var resp = confirm("¿Desea Cerrar la sesion?");
+        if (resp == true){
+
+            return true;
+        }
+        else {
+             return false;
+        }
+
+    }
+    </script>
 <?php
 include("../modelo/connect_db.php");
 if (isset($_GET['id'])) {
@@ -41,7 +54,7 @@ if (isset($_GET['id'])) {
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Talent Hunter|<?php echo $use['name'] ?> </title>
+        <title>Talent Hunter|<?php echo $_SESSION['name'] ?>  configuracion</title>
         <link rel="shortcut icon" href="..\vista\img\talent_hunter7-removebg-preview.png">
         <link rel="stylesheet" href="../vista/css/estiloprodep.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
@@ -112,13 +125,13 @@ if (isset($_GET['id'])) {
                     <!-- Profile Image -->
                     <div class="box box-primary">
                         <div class="box-body box-profile">
-                            <img class="profile-user-img img-responsive" src="../vista/img/profile_photos/<?php echo $use['profile_foto']; ?>" alt="User profile picture">
+                            <img class="profile-user-img img-responsive" src="../vista/img/profile_photos/<?php echo $_SESSION['profile_foto']; ?>" alt="User profile picture">
 
-                            <h3 class="profile-username text-center"><?php echo $use['name']; ?></h3>
+                            <h3 class="profile-username text-center"><?php echo $_SESSION['name']; ?></h3>
                             <!-- Consultar rol Image -->
                             <?php
 
-                            $roldb = mysqli_query($mysqli, "SELECT * FROM rol WHERE id_rol = $use[id_rol]");
+                            $roldb = mysqli_query($mysqli, "SELECT * FROM rol WHERE id_rol = $_SESSION[id_rol]");
                             $rol = mysqli_fetch_array($roldb);
                             ?>
 
@@ -143,26 +156,40 @@ if (isset($_GET['id'])) {
                         </div>
                         <!-- /.box-header -->
                         <div class="box-body">
+                        <strong><i class="fa fa-pencil margin-r-5"></i> DNI</strong>
 
+<p>
+    <?php echo "$_SESSION[id_user]" ?>
+</p>
+
+<hr>
+
+<strong><i class="fa fa-pencil margin-r-5"></i> Email</strong>
+
+<p>
+    <?php echo "$_SESSION[email]" ?>
+</p>
+
+<hr>
                             <strong><i class="fa fa-pencil margin-r-5"></i> Descripción</strong>
 
                             <p>
-                                <?php echo "$use[description]" ?>
+                                <?php echo "$_SESSION[description]" ?>
                             </p>
 
                             <hr>
                             <strong><i class="fa fa-book margin-r-5"></i> Deporte</strong>
 
                             <p class="text-muted">
-                                <?php echo "$use[deporte]" ?>
+                                <?php echo "$_SESSION[deporte]" ?>
                             </p>
 
                             <hr>
-                            <?php if ($use['id_rol'] == 1) { ?>
+                            <?php if ($_SESSION['id_rol'] == 1) { ?>
                                 <strong><i class="fa fa-book margin-r-5"></i> Posicion</strong>
 
                                 <p class="text-muted">
-                                    <?php echo "$use[position]" ?>
+                                    <?php echo "$_SESSION[position]" ?>
                                 </p>
 
                                 <hr>
@@ -170,7 +197,7 @@ if (isset($_GET['id'])) {
 
                             <?php
 
-                            $paisdb = mysqli_query($mysqli, "SELECT * FROM pais WHERE id_pais = $use[pais]");
+                            $paisdb = mysqli_query($mysqli, "SELECT * FROM pais WHERE id_pais = $_SESSION[pais]");
                             $pais = mysqli_fetch_array($paisdb);
                             ?>
                             <strong><i class="fa fa-map-marker margin-r-5"></i> Pais</strong>
@@ -182,10 +209,21 @@ if (isset($_GET['id'])) {
                             <strong><i class="fa fa-pencil margin-r-5"></i> Region</strong>
 
                             <p>
-                                <?php echo "$use[region]" ?>
+                                <?php echo "$_SESSION[region]" ?>
                             </p>
 
                             <hr>
+                            <?php if ($_SESSION['id_rol'] == 1) { ?>
+                                <a href="../controlador/actualizardep.php"><input type="button" name="actualizadep" value="Editar" /></a>
+                            <?php } elseif ($_SESSION['id_rol'] == 2) { ?>
+                                <a href="../controlador/actualizarent.php"><input type="button" name="actualizadep" value="Editar" /></a>
+                            <?php } ?>
+                            <?php if ($_SESSION['id_rol'] == 1) { ?>
+                            <a href="../vista/eliminardep.php"><input type="button" name="delete" value="Eliminar cuenta"/></a>
+                            <?php } elseif ($_SESSION['id_rol'] == 2) { ?>
+                            <a href="../vista/eliminarent.php"><input type="button" name="delete" value="Eliminar cuenta"/></a>
+                            <?php } ?>
+                         <a href="../modelo/desconectar.php"><input type="button" name="logout" value="Logout" onclick="return Confirmlogout()"/></a>
 
 
                         </div>

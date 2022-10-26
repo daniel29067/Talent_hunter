@@ -29,8 +29,14 @@ $CantidadMostrar=5;
             <div class="box-header with-border">
               <div class="user-block">
                 <img class="img-circle" src="../vista/img/profile_photos/<?php echo $use['profile_foto']; ?>" alt="User Image">
-                <span class="description" onclick="location.href='perfil.php?id=<?php echo $use['id_user'];?>';" style="cursor:pointer; color: #3C8DBC;""><?php echo $use['name'];?></span>
-                <span class="description"><?php echo $lista['fecha'];?></span>
+                <?php 
+              if($_SESSION['id_rol']==1){ ?>
+                <span class="description" style="cursor:pointer; color: #3C8DBC;""><?php echo $use['name'];?></span>
+                <?php
+                }
+              elseif($_SESSION['id_rol']==2) { ?>
+<span class="description" onclick="location.href='perfil.php?id=<?php echo $use['id_user'];?>';" style="cursor:pointer; color: #3C8DBC;""><?php echo $use['name'];?></span>
+<?php }?>
               </div>
               <!-- /.user-block -->
               <div class="box-tools">
@@ -42,7 +48,7 @@ $CantidadMostrar=5;
             <!-- /.box-header -->
             <div class="box-body">
               <!-- post text -->
-              <p><?php echo $lista['contenido'];?></p>
+             
 
               <?php 
               if($_SESSION['id_rol']==1){
@@ -73,9 +79,14 @@ $CantidadMostrar=5;
                 if($info2=='mp4'||$info2=='mov' ||$info2=='wmv'||$info2=='avi'){
 
               ?>
-              <video width="100%" height="240" controls>
+              <form action="../modelo/eliminarpost.php" method="post">
+               <video width="100%" height="240" controls>
 					    <source src="../vista/publicaciones/<?php echo $lista['post'];?>">
 				      </video>
+            
+                <input type="submit" name="delete" value="Delete" onclick="return Confirmdelete()" />
+            
+    </form>
               <?php
                 }
                 else{?>
@@ -85,7 +96,8 @@ $CantidadMostrar=5;
           	  }
             }
 ?>
-
+ <p><?php echo $lista['contenido'];?></p>
+<span class="description"><?php echo $lista['fecha'];?></span>
 
               <br><br>
               

@@ -24,6 +24,7 @@ if ($f2 = mysqli_fetch_assoc($sql2)) {
 		$_SESSION['region'] = $f2['region'];
 		$_SESSION['deporte'] = $f2['deporte'];
 		$_SESSION['position'] = $f2['position'];
+		$_SESSION['description'] = $f2['description'];
 		$_SESSION['profile_foto'] = $f2['profile_foto'];
 		$_SESSION['id_rol'] = $f2['id_rol'];
 		$_SESSION['id_estado'] = $f2['id_estado'];

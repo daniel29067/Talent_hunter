@@ -15,7 +15,7 @@ $CantidadMostrar=5;
 	$consulta=mysqli_query($mysqli,$consultavistas);
 	while ($lista=mysqli_fetch_array($consulta)) {
 
-		$userid = mysqli_real_escape_string($mysqli,$_SESSION['id_user']);
+		$userid = mysqli_real_escape_string($mysqli,$lista['id_user']);
 
 		$usuariob = mysqli_query($mysqli,"SELECT * FROM user WHERE id_user = '$userid'");
     $use = mysqli_fetch_array($usuariob);

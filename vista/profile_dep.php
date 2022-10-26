@@ -228,7 +228,7 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
           <!-- codigo scroll -->
 
 
-          </div>S
+          </div>
         </div>
        
 </body>

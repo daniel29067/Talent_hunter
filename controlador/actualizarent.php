@@ -79,7 +79,7 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
 											<!--EMAIL-->
 											<div class="form-group">
 											<label style="font-size: 14pt; color: #000000;"><b>email:</b></label>
-											<h5><?php echo $row['email']; ?></h5>
+											<h5><?php echo $row['email'] ?></h5>
 											</div>
 											<!--PASSWD-->
 											<div class="form-group">

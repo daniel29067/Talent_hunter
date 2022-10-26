@@ -51,7 +51,9 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
         margin: -500px auto;
 
       }
+      
     </style>
+    </head>
 <body>
 
   <nav class="navbar navbar-expand-md bg-white border border-1 border-secondary rounded-bottom shadow">
@@ -193,7 +195,7 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
           <!-- codigo scroll -->
 
 
-          </div>S
+          </div>
         </div>   
 </body>
 </html>

@@ -28,7 +28,7 @@ $CantidadMostrar=5;
             <div class="box-header with-border">
               <div class="user-block">
                 <img class="img-circle" src="../vista/img/profile_photos/<?php echo $use['profile_foto']; ?>" alt="User Image">
-               <span class="description" onclick="location.href='perfil.php?id=<?php echo $use['id_user'];?>';" style="cursor:pointer; color: #3C8DBC;""><?php echo $use['name'];?></span>
+               <span class="description" onclick="location.href='../vista/perfil.php?id=<?php echo $use['id_user'];?>';" style="cursor:pointer; color: #3C8DBC;""><?php echo $use['name'];?></span>
                 <span class="description"><?php echo $lista['fecha'];?></span>
   </div>
               <!-- /.user-block -->
@@ -64,6 +64,7 @@ $CantidadMostrar=5;
           	  ?>
 
               <br><br>
+              <!--
               <?php 
               $numcomen = mysqli_num_rows(mysqli_query($mysqli,"SELECT * FROM comentarios WHERE publicacion = '".$lista['id_pub']."'"));
               ?>
@@ -138,7 +139,7 @@ $CantidadMostrar=5;
         </div>
         <!-- /.col -->
         <!-- END PUBLICACIONES -->
-    
+              -->
     <br><br>
 
 	<?php

@@ -52,6 +52,7 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
 
       }
     </style>
+</head>
 <body>
 
   <nav class="navbar fixed-top navbar-expand-md bg-white border border-1 border-secondary rounded-bottom shadow">

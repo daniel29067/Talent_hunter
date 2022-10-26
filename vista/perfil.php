@@ -143,6 +143,14 @@ if (isset($_GET['id'])) {
                         </div>
                         <!-- /.box-header -->
                         <div class="box-body">
+
+                            <strong><i class="fa fa-pencil margin-r-5"></i> Descripción</strong>
+
+                            <p>
+                                <?php echo "$use[description]" ?>
+                            </p>
+
+                            <hr>
                             <strong><i class="fa fa-book margin-r-5"></i> Deporte</strong>
 
                             <p class="text-muted">
@@ -150,43 +158,36 @@ if (isset($_GET['id'])) {
                             </p>
 
                             <hr>
-                          <?php  if($use['id_rol']==1)
-                          { ?>
-                             <strong><i class="fa fa-book margin-r-5"></i> Posicion</strong>
+                            <?php if ($use['id_rol'] == 1) { ?>
+                                <strong><i class="fa fa-book margin-r-5"></i> Posicion</strong>
 
-                            <p class="text-muted">
-                                <?php echo "$use[position]" ?>
-                            </p>
+                                <p class="text-muted">
+                                    <?php echo "$use[position]" ?>
+                                </p>
 
-                            <hr>
-                       <?php } ?>
-                          
-                       <?php
+                                <hr>
+                            <?php } ?>
 
-$paisdb = mysqli_query($mysqli, "SELECT * FROM pais WHERE id_pais = $use[pais]");
-$pais = mysqli_fetch_array($paisdb);
-?>
+                            <?php
+
+                            $paisdb = mysqli_query($mysqli, "SELECT * FROM pais WHERE id_pais = $use[pais]");
+                            $pais = mysqli_fetch_array($paisdb);
+                            ?>
                             <strong><i class="fa fa-map-marker margin-r-5"></i> Pais</strong>
 
                             <p class="text-muted"><?php echo "$pais[name_pais]" ?></p>
 
                             <hr>
 
-                            <strong><i class="fa fa-pencil margin-r-5"></i> Skills</strong>
+                            <strong><i class="fa fa-pencil margin-r-5"></i> Region</strong>
 
                             <p>
-                                <span class="label label-danger">UI Design</span>
-                                <span class="label label-success">Coding</span>
-                                <span class="label label-info">Javascript</span>
-                                <span class="label label-warning">PHP</span>
-                                <span class="label label-primary">Node.js</span>
+                                <?php echo "$use[region]" ?>
                             </p>
 
                             <hr>
 
-                            <strong><i class="fa fa-file-text-o margin-r-5"></i> Notes</strong>
 
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
                         </div>
                         <!-- /.box-body -->
                     </div>

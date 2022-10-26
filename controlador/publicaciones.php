@@ -48,7 +48,9 @@ $CantidadMostrar=5;
               if($lista['post'] != 0)
               {
               ?>
-              <video src="../vista/publicaciones/<?php echo $fot['post'];?>" width="100%">
+              <video width="100%" height="240" controls>
+					    <source src="../vista/publicaciones/<?php echo $fot['post'];?>">
+				      </video>
               <?php
           	  }
             }

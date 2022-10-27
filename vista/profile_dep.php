@@ -56,16 +56,37 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
 </head>
 <body>
 
+  
+
 <nav class="navbar bg-light fixed-top">
   <div class="container-fluid">
     
     <a class="navbar-brand" href="">Talent Hunter</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+    <button class="navbar-toggler" type="button" 
+    data-bs-toggle="offcanvas" 
+    data-bs-target="#offcanvasNavbar" 
+    aria-controls="offcanvasNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
+
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+
+        <?php
+        include("../modelo/connect_db.php");
+        $query="SELECT * from user where id_user=$_SESSION[id_user]";
+        $resultado=$mysqli->query($query);
+        while ($row=$resultado->fetch_assoc()){
+        ?> 
+
+          <!-- boton configuracion perfil-->
+          <a class="navbar-brand text-end" href="../vista/perfilpriv.php">
+        <!--<img height="100px" src="data:Image/png;base64,<?php echo base64_encode($row['profile_foto']); ?>"/>   --->
+        <img height="50px" class="rounded-circle" src="../vista/img/profile_photos/<?php echo $_SESSION['profile_foto']; ?>"/>&nbsp; <?php echo $row['name']; ?>
+      </a>
+
+        </h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
@@ -103,19 +124,6 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
 
     <div class="container-fluid px-2" id="enca">
 
-      <?php
-      include("../modelo/connect_db.php");
-      $query="SELECT * from user where id_user=$_SESSION[id_user]";
-      $resultado=$mysqli->query($query);
-      while ($row=$resultado->fetch_assoc()){
-      ?> 
-
-      <!-- boton configuracion -->
-
-      <a class="navbar-brand ms-auto" href="../vista/perfilpriv.php?id=<?php echo $_S['id_user'];?>';">
-        <!--<img height="100px" src="data:Image/png;base64,<?php echo base64_encode($row['profile_foto']); ?>"/>   --->
-        <img height="30px" class="rounded-circle" src="../vista/img/profile_photos/<?php echo $_SESSION['profile_foto']; ?>"/>&nbsp; <?php echo $row['name']; ?>
-      </a>
 
 </div>
 

@@ -33,14 +33,10 @@
 </head>
 <body>  
 <div class="container bg-white w-75 mt-5 mb-5 rounded shadow">
-    <div class="row align-items-stretch p-4">
+    <div class="row align-items-stretch p-3">
 
-      <div class="text-end mb-4">
-        <img src="../vista/img/talent_hunter6.png" width="70" alt="">
-      </div>
-
-      <div class="mb-4 text-center">
-        <h3>Registro</h3>
+      <div class="mb-4">
+      <h3>Registro</h3>
       </div>
 
       <form class="row" method="post" action="..\modelo\registrarent.php" enctype="multipart/form-data">

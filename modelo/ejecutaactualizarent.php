@@ -60,14 +60,14 @@ else{
 				//la variable  $mysqli viene de connect_db que lo traigo con el require("connect_db.php");
 				mysqli_query($mysqli,"UPDATE user SET name='$name', passwd='$pass',deporte='$deporte',profile_foto='$nombre',description='$description' where id_user=$_SESSION[id_user]");
 			
-				$_SESSION['name'] = $fname;
+				$_SESSION['name'] = $name;
 				$_SESSION['deporte'] = $deporte;
 				$_SESSION['description'] = $description;
 				$_SESSION['profile_foto'] = $nombre;
 				//echo 'Se ha registrado con exito';
 					echo "<script>
 						alert('Entidad Actualizado con éxito');
-					location.href='../vista/perfilpriv.php?id=<?php $_SESSION[id_user];?>'
+					location.href='../vista/perfilpriv.php'
 					 </script>";
 
 			

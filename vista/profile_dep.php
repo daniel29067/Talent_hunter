@@ -58,7 +58,15 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
 
 <nav class="navbar bg-light fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Talent Hunter</a>
+  <?php
+                if($_SESSION['id_rol']==1){
+                ?>
+                <a href="../vista/profile_dep.php"><img src="../vista/img/2.png" alt="Logo" width="50" class="d-inline-block align-text-center rounded">
+                <?php
+                }if($_SESSION['id_rol']=2){
+                    ?>
+                     <a href="../vista/profile_ent.php"><img src="../vista/img/2.png" alt="Logo" width="50" class="d-inline-block align-text-center rounded">
+                <?php }?>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>

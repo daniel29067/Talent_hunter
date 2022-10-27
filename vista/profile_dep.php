@@ -38,7 +38,7 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Talent Hunter|Deportista</title>
     <link rel="shortcut icon" href="..\vista\img\talent_hunter7-removebg-preview.png">
-    <link rel="stylesheet" href="../vista/css/estiloprodep.css">
+    <link rel="stylesheet" href="../vista/css/estiloprode.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <script src:"../js/jquery.jscroll.js"></script>
         <style>
@@ -56,79 +56,45 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
 </head>
 <body>
 
-  
+  <!--conexion a la base de datos -->
 
-<nav class="navbar bg-light fixed-top">
-  <div class="container-fluid">
-    
-    <a class="navbar-brand" href="">Talent Hunter</a>
-    <button class="navbar-toggler" type="button" 
-    data-bs-toggle="offcanvas" 
-    data-bs-target="#offcanvasNavbar" 
-    aria-controls="offcanvasNavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
-
-        <?php
+  <?php
         include("../modelo/connect_db.php");
         $query="SELECT * from user where id_user=$_SESSION[id_user]";
         $resultado=$mysqli->query($query);
         while ($row=$resultado->fetch_assoc()){
-        ?> 
+  ?> 
 
-          <!-- boton configuracion perfil-->
-          <a class="navbar-brand text-end" href="../vista/perfilpriv.php">
+  <nav class="navbar bg-light border-bottom border-2 rounded-bottom rounded-3">
+    <div class="container-fluid px-5">
+      <a class="navbar-brand" href="" id="title"><h2>Talent Hunter</h2></a>
+      <a class="navbar-brand text-end" href="../vista/perfilpriv.php">
         <!--<img height="100px" src="data:Image/png;base64,<?php echo base64_encode($row['profile_foto']); ?>"/>   --->
-        <img height="50px" class="rounded-circle" src="../vista/img/profile_photos/<?php echo $_SESSION['profile_foto']; ?>"/>&nbsp; <?php echo $row['name']; ?>
+        <img height="30px" class="rounded-circle" src="../vista/img/profile_photos/<?php echo $_SESSION['profile_foto']; ?>"/>
       </a>
-
-        </h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body">
-        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li>
-        </ul>
-        <form class="d-flex mt-3" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-      </div>
     </div>
+  </nav>
+
+  <div class="container border rounded">
+
+      <div class="header border-bottom">
+        <a class="navbar-brand" href="../vista/perfilpriv.php">
+          <!--<img height="100px" src="data:Image/png;base64,<?php echo base64_encode($row['profile_foto']); ?>"/>   --->
+          <img height="30px" class="rounded-circle" src="../vista/img/profile_photos/<?php echo $_SESSION['profile_foto']; ?>"/>
+        </a>
+      </div>
+
+      
+      
+      <div class="body">
+
+      </div>
+
+      <div class="flooter">
+
+      </div>
+
   </div>
-</nav>
-
-<nav class="navbar navbar-expand-md bg-light ">
-
-    <div class="container-fluid px-2" id="enca">
-
-
-</div>
-
-    </nav>
-
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
     

@@ -106,6 +106,10 @@ $aid = mysqli_real_escape_string($mysqli,$_SESSION['id_user']);
 <span class="description"><?php echo $lista['fecha'];?></span>
               <br><br>
               
+                           <a href="../controlador/actualizarpost.php"><input type="button" name="actualizarpost" value="Editar" /></a>
+                            
+                            <a href="../vista/eliminarpost.php"><input type="button" name="deletepost" value="Eliminar"/></a>
+              
         <!-- /.col -->
         <!-- END PUBLICACIONES -->
     

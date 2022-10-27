@@ -66,7 +66,7 @@ else{
 				//echo 'Se ha registrado con exito';
 					echo '<script>
 						alert("Deportista Actualizado con éxito");
-						location.href="../controlador/perfilpriv.php?id=<?php $_SESSION[id_user];?>"
+						location.href="../controlador/perfilpriv.php"
 					 </script>';
 
 			

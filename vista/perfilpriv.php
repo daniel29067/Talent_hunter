@@ -85,7 +85,7 @@ include("../modelo/connect_db.php");
                 ?>
                 <a href="../vista/profile_dep.php"><img src="../vista/img/2.png" alt="Logo" width="50" class="d-inline-block align-text-center rounded">
                 <?php
-                }if($_SESSION['id_rol']=2){
+                }if($_SESSION['id_rol']==2){
                     ?>
                      <a href="../vista/profile_ent.php"><img src="../vista/img/2.png" alt="Logo" width="50" class="d-inline-block align-text-center rounded">
                 <?php }?>

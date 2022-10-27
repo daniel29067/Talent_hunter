@@ -104,6 +104,7 @@ $aid = mysqli_real_escape_string($mysqli,$_GET['id']);
 ?>
  <p><?php echo $lista['contenido'];?></p>
 <span class="description"><?php echo $lista['fecha'];?></span>
+
               <br><br>
               
         <!-- /.col -->

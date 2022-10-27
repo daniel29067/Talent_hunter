@@ -12,6 +12,46 @@
 	$description=$_POST['description'];
 
 
+	if(isset($_POST['submit'])) 
+                  {
+				  $perfil=mysqli_real_escape_string($mysqli,$_POST['foto']);
+				  $result = mysqli_query($mysqli,"SHOW TABLE STATUS WHERE `Name` = 'user'");
+				  $data = mysqli_fetch_assoc($result);
+				  $next_increment = $data['Auto_increment'];
+
+				  $alea = substr(strtoupper(md5(microtime(true))), 0,12);
+				  $code = $next_increment.$alea;
+
+				  
+				  $rfoto = $_FILES['foto']['tmp_name'];
+				  $formatos_permitidos =  array('bmp','gif' ,'jpg','jpeg','png','blob','');
+				  $archivo = $_FILES['foto']['name'];
+				  $extension = pathinfo($archivo, PATHINFO_EXTENSION);
+				  if(!in_array($extension, $formatos_permitidos) ) {
+					  echo  "<script>
+					  alert('Error formato no permitido !!') 
+					  alert('Recuerde Siempre subir una foto!!') 
+					 </script>";
+				  }
+else{
+
+				  if(is_uploaded_file($rfoto))
+				  {
+				  $type=$extension;
+					$name1 = $code.".".$type;
+					$destino = "../vista/img/profile_photos/".$name1;
+					$nombre = $name1;
+					copy($rfoto, $destino);
+				}
+
+				else
+				{
+					$nombre = 'defect.jpg';
+				}
+
+
+			  }    
+			}  
 
 	
 //la variable  $mysqli viene de connect_db que lo traigo con el require("connect_db.php");
@@ -24,7 +64,7 @@
 
 				//require("connect_db.php");
 				//la variable  $mysqli viene de connect_db que lo traigo con el require("connect_db.php");
-				mysqli_query($mysqli,"INSERT INTO user VALUES('$id','$name','$email','$pass','$pais','$region','$deporte','','$foto','$description',0,2,1)");
+				mysqli_query($mysqli,"INSERT INTO user VALUES('$id','$name','$email','$pass','$pais','$region','$deporte','','$nombre','$description',0,2,1)");
 				//echo 'Se ha registrado con exito';
 				echo "<script>
 				

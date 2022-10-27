@@ -78,7 +78,7 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
 
       <!-- boton configuracion -->
 
-      <a class="navbar-brand text-end" href="../vista/perfilpriv.php?id=<?php echo $_SESSION['id_user'];?>';">
+      <a class="navbar-brand text-end" href="../vista/perfilpriv.php">
         <!--<img height="100px" src="data:Image/png;base64,<?php echo base64_encode($row['profile_foto']); ?>"/>   --->
         <img height="50px" class="rounded-circle" src="../vista/img/profile_photos/<?php echo $_SESSION['profile_foto']; ?>"/>&nbsp; <?php echo $row['name']; ?>
       </a>

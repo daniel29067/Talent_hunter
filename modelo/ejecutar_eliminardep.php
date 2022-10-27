@@ -9,10 +9,13 @@ if($f2=mysqli_fetch_assoc($sql2)){
 	if($pass==$f2['passwd']){
 
 		$id = $_SESSION["id_user"];
+		$post="delete from post where id_user=$id";;
 		$sql = "delete from user where id_user=$id";
 		echo $sql;
-		
+		echo $post;
+		mysqli_query($mysqli,$post);
 		mysqli_query($mysqli,$sql);
+		
 		echo "<script>
 					alert('Cuenta eliminada',location.href='../vista/index.php')
 				 </script>";

@@ -58,7 +58,8 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
 
 <nav class="navbar bg-light fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Talent Hunter</a>
+    
+    <a class="navbar-brand" href="">Talent Hunter</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -111,7 +112,7 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
 
       <!-- boton configuracion -->
 
-      <a class="navbar-brand ms-auto" href="../vista/perfilpriv.php?id=<?php echo $_SESSION['id_user'];?>';">
+      <a class="navbar-brand ms-auto" href="../vista/perfilpriv.php?id=<?php echo $_S['id_user'];?>';">
         <!--<img height="100px" src="data:Image/png;base64,<?php echo base64_encode($row['profile_foto']); ?>"/>   --->
         <img height="30px" class="rounded-circle" src="../vista/img/profile_photos/<?php echo $_SESSION['profile_foto']; ?>"/>&nbsp; <?php echo $row['name']; ?>
       </a>

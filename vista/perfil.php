@@ -30,7 +30,7 @@ if (@!$_SESSION['email']) {
 include("../modelo/connect_db.php");
 if (isset($_GET['id'])) {
     $id = mysqli_real_escape_string($mysqli, $_GET['id']);
-    // $pag = $_GET['perfil'];
+   //  $pag = $_GET['perfil'];
 
     $infouser = mysqli_query($mysqli, "SELECT * FROM user WHERE id_user = '$id'");
     $use = mysqli_fetch_array($infouser);
@@ -66,8 +66,15 @@ if (isset($_GET['id'])) {
             <div class="container-fluid px-5" id="enca">
 
                 <!-- icono -->
-                <span class="navbar-brand mb-0 h3">
-                    <img src="../vista/img/2.png" alt="Logo" width="50" class="d-inline-block align-text-center rounded">
+                <?php
+                if($_SESSION['id_rol']==1){
+                ?>
+                <a href="../vista/profile_dep.php"><img src="../vista/img/2.png" alt="Logo" width="50" class="d-inline-block align-text-center rounded">
+                <?php
+                }if($_SESSION['id_rol']=2){
+                    ?>
+                     <a href="../vista/profile_ent.php"><img src="../vista/img/2.png" alt="Logo" width="50" class="d-inline-block align-text-center rounded">
+                <?php }?>
                 </span>
 
                 <!--boton del menu -->
@@ -83,7 +90,7 @@ if (isset($_GET['id'])) {
 
                     <!-- boton configuracion -->
 
-                    <a class="navbar-brand text-end" href="../controlador/configent.php">
+                    <a class="navbar-brand text-end" href="../vista/perfilpriv.php?id=<?php echo $_SESSION['id_user'];?>">
                         <!--<img height="100px" src="data:Image/png;base64,<?php echo base64_encode($row['profile_foto']); ?>"/>   --->
                         <img height="50px" class="rounded-circle" src="../vista/img/profile_photos/<?php echo $_SESSION['profile_foto']; ?>" />&nbsp; <?php echo $row['name']; ?>
                     </a>
@@ -193,10 +200,12 @@ if (isset($_GET['id'])) {
                     </div>
                     <!-- /.box -->
                 </div>
-                <!-- /.col -->
-                <div class="col-md-9">
+              <!-- /.col -->
+              <div class="col-md-9">
                     <div class="nav-tabs-custom">
-                        
+                    <ul class="nav nav-tabs">
+              <li class="<?php echo $pag == 'miactividad' ? 'active' : ''; ?>"><a href="?id=<?php echo $id;?>&perfil=miactividad">Actividad</a></li>
+             </ul>
                         <div class="tab-content">
 
                         <?php

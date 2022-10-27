@@ -60,15 +60,9 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
 
     <div class="container-fluid px-5" id="enca">
 
-      <!-- icono --> <?php
-                if($_SESSION['id_rol']==1){
-                  ?>
-                  <a href="../vista/profile_dep.php"><img src="../vista/img/2.png" alt="Logo" width="50" class="d-inline-block align-text-center rounded">
-                  <?php
-                  }if($_SESSION['id_rol']=2){
-                      ?>
-                       <a href="../vista/profile_ent.php"><img src="../vista/img/2.png" alt="Logo" width="50" class="d-inline-block align-text-center rounded">
-                  <?php }?>
+      <!-- icono -->
+      <span class="navbar-brand mb-0 h3">
+        <img src="../vista/img/2.png" alt="Logo" width="50" class="d-inline-block align-text-center rounded">
       </span>
 
       <!--boton del menu -->

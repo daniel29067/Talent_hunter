@@ -41,17 +41,6 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
     <link rel="stylesheet" href="../vista/css/estiloprode.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <script src:"../js/jquery.jscroll.js"></script>
-        <style>
-            .scroll {
-                width: 100%;
-            }
-
-            .scroll .jscroll-loading {
-                width: 10%;
-                margin: -500px auto;
-
-            }
-        </style>
     </head>
 </head>
 <body>
@@ -67,73 +56,69 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
 
   <nav class="navbar bg-light border-bottom border-2 rounded-bottom rounded-3">
     <div class="container-fluid px-5">
-      <a class="navbar-brand" href="" id="title"><h2>Talent Hunter</h2></a>
+      <a class="navbar-brand" href="" id="title"><h2><b>Talent Hunter</b></h2></a>
       <a class="navbar-brand text-end" href="../vista/perfilpriv.php">
         <!--<img height="100px" src="data:Image/png;base64,<?php echo base64_encode($row['profile_foto']); ?>"/>   --->
-        <img height="30px" class="rounded-circle" src="../vista/img/profile_photos/<?php echo $_SESSION['profile_foto']; ?>"/>
+        <img height="30px" class="rounded-circle" src="../vista/img/profile_photos/<?php echo $_SESSION['profile_foto']; ?>"/> 
       </a>
     </div>
   </nav>
 
-  <div class="container border rounded mt-5 w-50">
+  <div class="container bg-white mt-5 pb-2 rounded border rounded-bottom border-2 " id="contenedor">
 
-      <div class="header border-bottom p-2">
-        <a class="navbar-brand" href="../vista/perfilpriv.php">
-          <!--<img height="100px" src="data:Image/png;base64,<?php echo base64_encode($row['profile_foto']); ?>"/>   --->
-          <img height="50px" class="rounded-circle" src="../vista/img/profile_photos/<?php echo $_SESSION['profile_foto']; ?>"/>&nbsp; <?php echo $row['name']; ?>
-        </a>
+    <!-- Contenedor nuevas publicaciones -->
+    <div class="row p-2 align-items-center bg-light rounded-bottom border-bottom border-3">
+
+      <div class="col-6">
+        <!--<img height="100px" src="data:Image/png;base64,<?php echo base64_encode($row['profile_foto']); ?>"/>   --->
+        <img height="40px" class="rounded-circle" src="../vista/img/profile_photos/<?php echo $_SESSION['profile_foto']; ?>"/>
+        <?php
+        }
+        ?> 
       </div>
 
+      <div class="col-6 text-end">
+        <h4>Nueva publicación</h4>
+      </div>
+
+    </div>
+
+    <form action="" method="post" enctype="multipart/form-data">
       
-      
-      <div class="body">
+      <div class="row p-4">
+        <textarea name="publicacion" onkeypress="return validarn(event)" placeholder="Muestra tus habilidades" class="form-control" cols="200" rows="3" required></textarea>
+      </div>
+
+      <div class="row p-3 align-items-center justify-content-center">
+
+        <div class="col-md-4 gap-2 rounded text-center align-items-center justify-content-center py-2" id="div_file">
+          <b>
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16" id="svg">
+              <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm4 0v6h8V1H4zm8 8H4v6h8V9zM1 1v2h2V1H1zm2 3H1v2h2V4zM1 7v2h2V7H1zm2 3H1v2h2v-2zm-2 3v2h2v-2H1zM15 1h-2v2h2V1zm-2 3v2h2V4h-2zm2 3h-2v2h2V7zm-2 3v2h2v-2h-2zm2 3h-2v2h2v-2z"/>
+            </svg>
+            
+            Video
+          </b>
+
+          <input type="file" name="foto" id="file-1" class="inputfile inputfile-1" data-multiple-caption="{count} files selected"/>
+
+        </div>
+
+        <div class="col-md-4 d-grid gap-1 text-center">
+
+      <button type="submit" name="publicar" class="btn btn-secondary btn-flat">Publicar</button>
 
       </div>
 
-      <div class="flooter">
+      </div>     
 
-      </div>
+    </form>
 
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
-    
-    
-    
-    <h5><?php echo $row['description']; ?></h5>
-    <?php
-        }
-    ?> 
-    
-         <!-- CAJA PUBLICACIONES -->
-         <div class="col-md-12">              
-              <div class="box box-primary direct-chat direct-chat-warning">
-                <div class="box-header with-border">
-                  <h3 class="box-title">Nueva publicación</h3>
+  <br>
 
-                 
-                    <button type="button" class="btn btn-box-tool" data-widget="collapse">
-                      <i class="fa fa-minus"></i>
-                    </button>
-              </div>
-
-              <!-- /.box-body -->
-                <div class="box-footer">
-                  <form action="" method="post" enctype="multipart/form-data">
-                    <div class="input-group">
-                      <textarea name="publicacion" onkeypress="return validarn(event)" placeholder="Nueva publicación" class="form-control" cols="200" rows="3" required></textarea>
-                      <br><br><br><br>
-
-                    <!-- START Input file nuevo diseño .-->
-                      <input type="file" name="foto" id="file-1" class="inputfile inputfile-1" data-multiple-caption="{count} files selected"/>
-                      <label for="file-1"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg> <span>Sube una foto</span></label>
-                    <!-- END Input file nuevo diseño .-->
-                    <br>
-
-                      <button type="submit" name="publicar" class="btn btn-primary btn-flat">Publicar</button>
-                    </div>
-                  </form>
-                  <?php
+  <?php
                   if(isset($_POST['publicar'])) 
                   {
                     $publicacion = mysqli_real_escape_string($mysqli,$_POST['publicacion']);
@@ -197,11 +182,8 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
                 }  
 
                   ?>
-                      
 
-                  
-                  
-               <!-- codigo scroll -->
+                  <!-- codigo scroll -->
           <div class="scroll">
             <?php require_once '../controlador/publicaciones.php'; ?>
           </div>
@@ -217,9 +199,7 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
           <!-- codigo scroll -->
 
 
-          </div>
-
-        </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
        
 </body>
 </html>

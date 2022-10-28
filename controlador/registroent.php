@@ -31,45 +31,49 @@
     <link rel="stylesheet" href="../vista/css/estilogeneral.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 </head>
-<body>  
-<div class="container bg-white w-50 mt-5 rounded shadow">
+<body>
+
+  <nav class="navbar bg-light border-bottom border-2 rounded-bottom">
+    <div class="container-fluid px-5">
+      <h2 id="title"><b>Talent Hunter</b></h2>
+      
+    </div>
+  </nav>
+
+  <div class="container bg-white mt-5 rounded shadow" id="contenedor">
     <div class="row align-items-stretch">
 
-      <div class="p-2 ms-auto">
-      <h3>Registro</h3>
+      <div class="p-3 ms-auto align-self-center text-center">
+        <h3>Crea una cuenta</h3>
       </div>
       <hr>
 
       <form class="row ps-4" method="post" action="..\modelo\registrarent.php" enctype="multipart/form-data">
         
         <!--ID-->
-        <div class="col-lg-6 mb-2">
-          <label for="id">ID</label>
+        <div class="col-lg-6 mb-2">       
           <input type="text" class="form-control" name="id" required placeholder="Ingresa tu Id" />
         </div>
 
         <!--NOMBRE-->
         <div class="col-lg-6 mb-2">
-          <label for="nombre">Nombre</label>
           <input type="text" class="form-control" name="name" required placeholder="Ingresa tu nombre" pattern="[A-Za-zÑñÁÉÍÓÚáéíóú\s]+" />
         </div>
 
         <!--EMAIL-->
-        <div class="col-lg-6 mb-2">
-          <label for="email">Email</label>
-          <input type="email" class="form-control" name="email" class="form-control" required placeholder="ingresa tu email"  />
+        <div class="col-lg-12 mb-2">
+          <input type="email" class="form-control" name="email" class="form-control" required placeholder="Ingresa tu email"  />
         </div>
 
         <!--PASSWD-->
-        <div class="col-lg-6 mb-2">
-          <label for="">Password</label>
+        <div class="col-lg-12 mb-2">
           <input type="password" class="form-control" name="pass" class="form-control" required placeholder="Ingresa contraseña" />
         </div>  
 
         <!--PAIS-->
-        <div class="col-lg-4 mb-2">
+        <div class="col-lg-6 mb-2">
           <label for="pais">Pais</label>
-          <select class="form-select" required name="pais">
+          <select class="form-select" placeholder="Selecciona un pais" required name="pais">
             <?php 
                 // use a while loop to fetch data 
                 // from the $all_categories variable 
@@ -92,19 +96,19 @@
         </div>
 
         <!--REGION-->
-        <div class="col-lg-4 mb-2">
+        <div class="col-lg-6 mb-2">
           <label for="region">Region</label>
           <input type="text" class="form-control" name="region" required placeholder="Ingresa tu region" pattern="[A-Za-zÑñÁÉÍÓÚáéíóú\s]+" />
         </div>
 
         <!--DEP-->
-	      <div class="col-lg-4 mb-2">
+        <div class="col-lg-6 mb-2">
           <label for="deporte">Deporte</label>
           <input type="text" class="form-control" name="deporte" required placeholder="Ingresa el Deporte" pattern="[A-Za-zÑñÁÉÍÓÚáéíóú\s]+" />
-        </div>
+        </div>   
 
         <!--foto-->
-        <div class="col-lg-8 mb-2">
+        <div class="col-lg-12 gap-2 mb-2">
           <label for="fotop">Foto perfil</label>
           <input required type="file" class="form-control" name="foto"  />
         </div>
@@ -117,7 +121,9 @@
 
         <div class="d-grid gap-2 d-md-flex justify-content-md-end pb-3">
           <input class="btn btn-primary" required type="submit" name="submit" value="Registrarse"/>
-          <a href="../vista/index.php"><button type="button" class="btn btn-secondary">Cancelar</button></a>
+          <a class="navbar-brand text-end" href="../vista/index.php">
+            <button type="button" class="btn btn-secondary">Cancelar</button>
+          </a>
         </div>
         
       </form>

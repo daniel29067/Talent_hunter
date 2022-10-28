@@ -1,6 +1,7 @@
 body{
     background: linear-gradient(to right, rgb(99, 216, 208), rgb(9, 161, 151));
     font-family:'Courier New', Courier, monospace;
+    margin: 5px;
 }
 
 #contenedor{

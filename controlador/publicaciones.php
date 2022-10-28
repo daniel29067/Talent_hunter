@@ -79,14 +79,9 @@ $CantidadMostrar=5;
                 if($info2=='mp4'||$info2=='mov' ||$info2=='wmv'||$info2=='avi'){
 
               ?>
-              <form action="../modelo/eliminarpost.php" method="post">
-               <video width="100%" height="240" controls>
+              <video width="100%" height="240" controls>
 					    <source src="../vista/publicaciones/<?php echo $lista['post'];?>">
 				      </video>
-            
-                <input type="submit" name="delete" value="Delete" onclick="return Confirmdelete()" />
-            
-    </form>
               <?php
                 }
                 else{?>

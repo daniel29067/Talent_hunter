@@ -32,14 +32,15 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 </head>
 <body>  
-<div class="container bg-white w-75 mt-5 mb-5 rounded shadow">
-    <div class="row align-items-stretch p-3">
+<div class="container bg-white w-50 mt-5 rounded shadow">
+    <div class="row align-items-stretch">
 
-      <div class="mb-4">
+      <div class="p-2 ms-auto">
       <h3>Registro</h3>
       </div>
+      <hr>
 
-      <form class="row" method="post" action="..\modelo\registrarent.php" enctype="multipart/form-data">
+      <form class="row ps-4" method="post" action="..\modelo\registrarent.php" enctype="multipart/form-data">
         
         <!--ID-->
         <div class="col-lg-6 mb-2">
@@ -114,8 +115,9 @@
           <textarea name="description" class="form-control"></textarea>
         </div>
 
-        <div class="d-grid">
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end pb-3">
           <input class="btn btn-primary" required type="submit" name="submit" value="Registrarse"/>
+          <a href="../vista/index.php"><button type="button" class="btn btn-secondary">Cancelar</button></a>
         </div>
         
       </form>

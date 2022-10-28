@@ -6,10 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Talent Hunter|Registro</title>
     <link rel="shortcut icon" href="../vista/img/talent_hunter7-removebg-preview.png">
-    <link rel="stylesheet" href="../vista/css/estiloregistro.css">
+    <link rel="stylesheet" href="../vista/css/estiloregistr.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 </head>
 <body>
+
+    <nav class="navbar bg-light border-bottom border-2 rounded-bottom">
+        <div class="container-fluid px-5">
+            <h2 id="title"><b>Talent Hunter</b></h2>
+            <a class="navbar-brand text-end" href="../vista/index.php">
+                <button type="button" class="btn btn-secondary">Cancelar</button>
+            </a>
+        </div>
+    </nav>
 
     <div class="container">
         <a href="../controlador/registrodep.php" name="create_dep" value="Deportista">

@@ -75,12 +75,12 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
     </div>
   </nav>
 
-  <div class="container border rounded">
+  <div class="container border rounded mt-5 w-50">
 
-      <div class="header border-bottom">
+      <div class="header border-bottom p-2">
         <a class="navbar-brand" href="../vista/perfilpriv.php">
           <!--<img height="100px" src="data:Image/png;base64,<?php echo base64_encode($row['profile_foto']); ?>"/>   --->
-          <img height="30px" class="rounded-circle" src="../vista/img/profile_photos/<?php echo $_SESSION['profile_foto']; ?>"/>
+          <img height="50px" class="rounded-circle" src="../vista/img/profile_photos/<?php echo $_SESSION['profile_foto']; ?>"/>&nbsp; <?php echo $row['name']; ?>
         </a>
       </div>
 

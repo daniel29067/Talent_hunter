@@ -2,3 +2,16 @@ body{
     background: linear-gradient(to right, rgb(99, 216, 208), rgb(9, 161, 151));
     font-family:'Courier New', Courier, monospace;
 }
+
+#contenedor{
+    width: 500px;
+}
+
+@font-face{
+    font-family: 'Dancing';
+    src: url(fuentes/Dancing_Script/DancingScript-VariableFont_wght.ttf);
+}
+
+#title{
+    font-family: 'Dancing';
+}

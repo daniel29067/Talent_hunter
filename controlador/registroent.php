@@ -28,7 +28,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Talent Hunter|Crear Entidad</title>
     <link rel="shortcut icon" href="..\vista\img\talent_hunter7-removebg-preview.png">
-    <link rel="stylesheet" href="../vista/css/estilogeneral.css">
+    <link rel="stylesheet" href="../vista/css/estilog.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 </head>
 <body>
@@ -119,11 +119,15 @@
           <textarea name="description" class="form-control"></textarea>
         </div>
 
-        <div class="d-grid gap-2 d-md-flex justify-content-md-end pb-3">
-          <input class="btn btn-primary" required type="submit" name="submit" value="Registrarse"/>
-          <a class="navbar-brand text-end" href="../vista/index.php">
-            <button type="button" class="btn btn-secondary">Cancelar</button>
-          </a>
+        <div class="row-lg-6 d-md-flex justify-content-md-end pb-3 text-end">
+
+          <div class="col">
+            <input class="btn btn-primary" required type="submit" name="submit" value="Registrarse"/>
+            <a class="navbar-brand text-end" href="../vista/index.php" >
+              <button type="button" class="btn btn-secondary">Cancelar</button>
+            </a>
+          </div>
+
         </div>
         
       </form>

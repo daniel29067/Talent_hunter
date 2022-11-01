@@ -11,11 +11,11 @@
 </head>
 <body>
 
-    <nav class="navbar bg-light border-bottom border-2 rounded-bottom">
+    <nav class="navbar bg-light border-bottom border-2 rounded-bottom" id="enca" >
         <div class="container-fluid px-5">
             <h2 id="title"><b>Talent Hunter</b></h2>
             <a class="navbar-brand text-end" href="../vista/index.php">
-                <button type="button" class="btn btn-secondary">Cancelar</button>
+                <button type="button" class="btn" id="btnn">Iniciar Sesión</button>
             </a>
         </div>
     </nav>

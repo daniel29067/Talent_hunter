@@ -56,7 +56,7 @@ include("../modelo/connect_db.php");
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Talent Hunter|<?php echo $_SESSION['name'] ?>  configuracion</title>
         <link rel="shortcut icon" href="..\vista\img\talent_hunter7-removebg-preview.png">
-        <link rel="stylesheet" href="../vista/css/estiloprodep.css">
+        <link rel="stylesheet" href="../vista/css/estiloprepri.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
         <script src:"../js/jquery.jscroll.js"></script>
         <style>
@@ -74,202 +74,275 @@ include("../modelo/connect_db.php");
 
     <body>
 
-        <nav class="navbar navbar-expand-md bg-white border border-1 border-secondary rounded-bottom shadow">
+    <!-- encabezado de pagina -->
 
-            <div class="container-fluid px-5" id="enca">
+    <nav class="navbar border-bottom p-0 border-2 rounded-bottom">
 
-                <!-- icono -->
-                <span class="navbar-brand mb-0 h3">
-                <?php
-                if($_SESSION['id_rol']==1){
-                ?>
-                <a href="../vista/profile_dep.php"><img src="../vista/img/2.png" alt="Logo" width="50" class="d-inline-block align-text-center rounded">
-                <?php
-                }if($_SESSION['id_rol']==2){
-                    ?>
-                     <a href="../vista/profile_ent.php"><img src="../vista/img/2.png" alt="Logo" width="50" class="d-inline-block align-text-center rounded">
-                <?php }?>
-                </span>
+        <div class="container-fluid px-5">
 
-                <!--boton del menu -->
+            <?php
 
+            include("../modelo/connect_db.php");
+            $query = "SELECT * from user where id_user=$_SESSION[id_user]";
+            $resultado = $mysqli->query($query);
 
+            while ($row = $resultado->fetch_assoc()) {
 
-                <?php
-                include("../modelo/connect_db.php");
-                $query = "SELECT * from user where id_user=$_SESSION[id_user]";
-                $resultado = $mysqli->query($query);
-                while ($row = $resultado->fetch_assoc()) {
-                ?>
+            if($_SESSION['id_rol']==1){
 
-                    <!-- boton configuracion -->
+            ?>
 
-                    <a class="navbar-brand text-end" href="../vista/perfilpriv.php">
-                        <!--<img height="100px" src="data:Image/png;base64,<?php echo base64_encode($row['profile_foto']); ?>"/>   --->
-                        <img height="50px" class="rounded-circle" src="../vista/img/profile_photos/<?php echo $_SESSION['profile_foto']; ?>" />&nbsp; <?php echo $row['name']; ?>
-                    </a>
+            <a class="navbar-brand" href="../vista/profile_dep.php" id="title">
 
-            </div>
+                <h2><b>Talent Hunter</b></h2> 
+            
+            </a>
 
-        </nav>
+            <?php
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+            }if($_SESSION['id_rol']==2){
 
+            ?>
 
-    <?php
-                }
-    ?>
+            <a class="navbar-brand" href="../vista/profile_dep.php" id="title">
 
+                <h2><b>Talent Hunter</b></h2> 
 
-    <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper">
+            </a>
 
-        <!-- Main content -->
-        <section class="content">
+            <?php 
+            }
+            }   
+            ?>
 
-            <div class="row">
-                <div class="col-md-3">
+        </div>
 
-                    <!-- Profile Image -->
-                    <div class="box box-primary">
-                        <div class="box-body box-profile">
-                            <img class="profile-user-img img-responsive" src="../vista/img/profile_photos/<?php echo $_SESSION['profile_foto']; ?>" alt="User profile picture">
+    </nav>
 
-                            <h3 class="profile-username text-center"><?php echo $_SESSION['name']; ?></h3>
-                            <!-- Consultar rol Image -->
-                            <?php
+    <!-- Contenedor Padre -->
 
-                            $roldb = mysqli_query($mysqli, "SELECT * FROM rol WHERE id_rol = $_SESSION[id_rol]");
-                            $rol = mysqli_fetch_array($roldb);
-                            ?>
+    <div class="container-fluid bg-white mt-1 mb-4" >
 
-                            <p class="text-muted text-center"><?php echo $rol['des_rol']; ?></p>
+        <div class="row justify-content-between">
 
+            <!-- Contenedor Hijo a la izquierda -->
+            <div class="col-lg-4 p-0 bg-white">
 
+                <div class="row border border-3 shadow rounded m-3">
 
+                    <!-- Creamos una fila para agregar dos columnas para la Imagen de perfil, nombre, rol y chat -->
+                    <div class="row-fluid" id="informacion">
 
-                            <br>
-                            <a href="chat.php?usuario=<?php echo $id; ?>"><input type="button" class="btn btn-default btn-block" name="dejarseguir" value="Enviar chat"></a>
+                        <div class="row border-bottom border-2 p-1 d-flex justify-content-center align-items-center">
 
+                            <!-- Columna de imagen -->
+                            <div class="col-lg-6 d-flex justify-content-center align-items-center ">
+                        
+                                <!-- boton configuracion -->
+                                <a class="navbar-brand text-end" href="../vista/perfilpriv.php">
+                                    <!--<img height="100px" src="data:Image/png;base64,<?php echo base64_encode($row['profile_foto']); ?>"/>   --->
+                                    <img id="foto" height="130px" class=" rounded-circle" src="../vista/img/profile_photos/<?php echo $_SESSION['profile_foto']; ?>" />
+                                </a>                      
+                    
+                            </div>
+                    
+                            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
 
-                        </div> -->
-                        <!-- /.box-body -->
-                    </div>
-                    <!-- /.box -->
+                            <!-- columna nombre, rol, chat -->
 
-                    <!-- About Me Box -->
-                    <div class="box box-primary">
-                        <div class="box-header with-border">
-                            <h3 class="box-title">Sobre Mi</h3>
+                            <div class="col-lg-6 " id="prueba">
+
+                                <!-- creamos una fila para poder crear una columna -->
+                                <div class="row pt-3">
+
+                                    <!-- columna nombre, chat -->
+                                    <div class="col d-inline" id="prueba1">
+                
+                                        <b id="nombre">
+                                        <?php 
+                                        echo $_SESSION['name'];
+                                        ?>
+                                        </b>
+                
+
+                                        &nbsp;
+
+                                        <a href="chat.php?usuario=<?php echo $id; ?>">
+                
+                                            <!-- <input type="button" class="btn btn-default btn-block" name="dejarseguir" value="Enviar chat"></a> -->
+
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-text" viewBox="0 0 16 16">
+                                                <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                                                <path d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6zm0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"/>
+                                            </svg>
+                                        </a>
+
+                                    </div>
+
+                                    <!-- rol -->
+
+                                    <div class="row-fluid">
+                        
+                                    <?php
+
+                                    $roldb = mysqli_query($mysqli, "SELECT * FROM rol WHERE id_rol = $_SESSION[id_rol]");
+                                    $rol = mysqli_fetch_array($roldb);
+
+                                    echo $rol['des_rol']; 
+
+                                    ?> 
+
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
-                        <!-- /.box-header -->
-                        <div class="box-body">
-                        <strong><i class="fa fa-pencil margin-r-5"></i> DNI</strong>
+                        
+                        <div class="p-3">
+                            <!-- <strong><i class="fa fa-pencil margin-r-5"></i> Descripción</strong> -->
+                            <?php echo "$_SESSION[description]" ?>
+                        </div>
+                    
+                    </div>
 
-<p>
-    <?php echo "$_SESSION[id_user]" ?>
-</p>
+                </div>
 
-<hr>
+                <div class="row-fluid border border-3 shadow rounded m-3">
 
-<strong><i class="fa fa-pencil margin-r-5"></i> Email</strong>
+                    <div class="row-fluid border-bottom rounded text-center" id="d">
+                        
+                        <h4>Datos</h4> 
 
-<p>
-    <?php echo "$_SESSION[email]" ?>
-</p>
+                    </div>
 
-<hr>
-                            <strong><i class="fa fa-pencil margin-r-5"></i> Descripción</strong>
+                    <div class="row-fluid">
+                        
+                        <div class="row justify-content-center align-items-center">
+                            
+                            <div class="col-lg-5 text-center">
 
-                            <p>
-                                <?php echo "$_SESSION[description]" ?>
-                            </p>
-
-                            <hr>
-                            <strong><i class="fa fa-book margin-r-5"></i> Deporte</strong>
-
-                            <p class="text-muted">
+                                <strong><i class="fa fa-book margin-r-5"></i> Deporte</strong>
+                    
+                                <p class="text-muted">
                                 <?php echo "$_SESSION[deporte]" ?>
-                            </p>
+                                </p> 
 
-                            <hr>
-                            <?php if ($_SESSION['id_rol'] == 1) { ?>
+                                <?php if ($_SESSION['id_rol'] == 1) { ?>
+
                                 <strong><i class="fa fa-book margin-r-5"></i> Posicion</strong>
 
                                 <p class="text-muted">
-                                    <?php echo "$_SESSION[position]" ?>
+                                <?php echo "$_SESSION[position]" ?>
                                 </p>
 
-                                <hr>
-                            <?php } ?>
 
-                            <?php
+                                <?php } ?>
 
-                            $paisdb = mysqli_query($mysqli, "SELECT * FROM pais WHERE id_pais = $_SESSION[pais]");
-                            $pais = mysqli_fetch_array($paisdb);
-                            ?>
-                            <strong><i class="fa fa-map-marker margin-r-5"></i> Pais</strong>
+                                <?php
 
-                            <p class="text-muted"><?php echo "$pais[name_pais]" ?></p>
+                                $paisdb = mysqli_query($mysqli, "SELECT * FROM pais WHERE id_pais = $_SESSION[pais]");
+                                $pais = mysqli_fetch_array($paisdb);
 
-                            <hr>
+                                ?>
 
-                            <strong><i class="fa fa-pencil margin-r-5"></i> Region</strong>
+                                <strong><i class="fa fa-map-marker margin-r-5"></i> Pais</strong>
 
-                            <p>
+                                <p class="text-muted"><?php echo "$pais[name_pais]" ?></p>
+
+                                <strong><i class="fa fa-pencil margin-r-5"></i> Region</strong>
+
+                                <p class="text-muted">
                                 <?php echo "$_SESSION[region]" ?>
-                            </p>
+                                </p>
 
-                            <hr>
-                            <?php if ($_SESSION['id_rol'] == 1) { ?>
-                                <a href="../controlador/actualizardep.php"><input type="button" name="actualizadep" value="Editar" /></a>
-                            <?php } elseif ($_SESSION['id_rol'] == 2) { ?>
-                                <a href="../controlador/actualizarent.php"><input type="button" name="actualizadep" value="Editar" /></a>
-                            <?php } ?>
-                            <?php if ($_SESSION['id_rol'] == 1) { ?>
-                            <a href="../vista/eliminardep.php"><input type="button" name="delete" value="Eliminar cuenta"/></a>
-                            <?php } elseif ($_SESSION['id_rol'] == 2) { ?>
-                            <a href="../vista/eliminarent.php"><input type="button" name="delete" value="Eliminar cuenta"/></a>
-                            <?php } ?>
-                         <a href="../modelo/desconectar.php"><input type="button" name="logout" value="Logout" onclick="return Confirmlogout()"/></a>
+                            </div>
 
+                            <div class="col-lg-7">
+
+                                <div class="row-fluid m-3">
+
+                                <?php if ($_SESSION['id_rol'] == 1) { ?>
+                                    
+                                    <a href="../controlador/actualizardep.php" id="btnn">
+                                        <button type="button" class="btn" name="actualizadep" value="Editar">Editar</button>
+                                        <!-- <input type="button" class="btn btn-primary" name="actualizadep" value="Editar" /> -->
+                                    </a>
+
+                                <?php } elseif ($_SESSION['id_rol'] == 2) { ?>
+
+                                    <a href="../controlador/actualizarent.php" id="btnn">
+                                        <button type="button" class="btn" name="actualizadep" value="Editar">Editar</button>
+                                        <!-- <input type="button" class="btn btn-primary" name="actualizadep" value="Editar" /> -->
+                                    </a>
+
+                                <?php } ?>
+
+                                </div>
+
+                                <div class="row-fluid m-3">
+
+                                <?php if ($_SESSION['id_rol'] == 1) { ?>
+
+                                    <a href="../vista/eliminardep.php" id="btnn">
+                                        <button type="button" class="btn" name="delete" value="Eliminar cuenta">Eliminar cuenta</button>
+                                        <!-- <input type="button" class="btn btn-primary" name="delete" value="Eliminar cuenta"/> -->
+                                    </a>
+                                    
+                                <?php } elseif ($_SESSION['id_rol'] == 2) { ?>
+
+                                    <a href="../vista/eliminarent.php" id="btnn">
+                                        <button type="button" class="btn" name="delete" value="Eliminar cuenta">Eliminar cuenta</button>
+                                        <!-- <input type="button" class="btn btn-primary" name="delete" value="Eliminar cuenta"/> -->
+                                    </a>
+
+                                <?php } ?>
+
+                                </div>
+
+                                <div class="row-fluid m-3">
+
+                                    <a href="../modelo/desconectar.php" id="btnn">
+                                        <button type="button" class="btn" name="logout" value="Logout" onclick="return Confirmlogout()">Cerrar Sesión</button>
+                                        <!-- <input type="button" class="btn btn-primary" name="logout" value="Logout" onclick="return Confirmlogout()"/> -->
+                                    </a>
+
+                                </div>
+
+                            </div>
 
                         </div>
-                        <!-- /.box-body -->
-                    </div>
-                    <!-- /.box -->
-                </div>
-                <!-- /.col -->
-                <div class="col-md-9">
-                    <div class="nav-tabs-custom">
-                        <!-- /.col -->
-                    <ul class="nav nav-tabs">
-              <li class="<?php echo $pag == 'actividad' ? 'active' : ''; ?>"><a href="?id=<?php echo $_SESSION['id_user'];?>&perfil=actividad">Actividad</a></li>
-             </ul>
-                        <div class="tab-content">
-
-                        <?php
-            $pagina = isset($_GET['perfil']) ? strtolower($_GET['perfil']) : 'actividad';
-            require_once '../controlador/actividad.php';
-            ?>
-
-
-
-
-                        </div>
 
                     </div>
-                    <!-- /.nav-tabs-custom -->
+
+
                 </div>
-                <!-- /.col -->
+
             </div>
-            <!-- /.row -->
 
-        </section>
-        <!-- /.content -->
+            <!-- fin contenedor hijo a  la izquierda -->
+
+            <div class="col-lg-7 ">
+
+                <div class="row mx-1 mt-3 border border-3 rounded shadow">
+
+                <!-- /.col -->
+                <ul class="nav nav-tabs">
+                    <li class="<?php echo $pag == 'actividad' ? 'active' : ''; ?>"><a href="?id=<?php echo $_SESSION['id_user'];?>&perfil=actividad">Actividad</a></li>
+                </ul>
+
+                <?php
+                $pagina = isset($_GET['perfil']) ? strtolower($_GET['perfil']) : 'actividad';
+                require_once '../controlador/actividad.php';
+                ?>
+
+                </div>
+
+            </div>
+
+        </div>
+        
     </div>
-    <!-- /.content-wrapper -->
 
     </body>
 
-    </html>
+</html>

@@ -3,12 +3,35 @@
     src: url(fuentes/Dancing_Script/DancingScript-VariableFont_wght.ttf);
 }
 
-#title{
-  font-family: 'Dancing';
+#contenido{
+  width: 50%;
+  max-width: 100%;
 }
 
-#contenedor{
-  width: 60%;
+#title{
+  font-family: 'Dancing';
+  color: #F4f4f4;
+}
+
+button#btnn{
+  text-decoration: none;
+  background: #F4f4f4;
+  color: rgb(9, 161, 151);
+
+}
+
+div#enca{
+      font-family: 'Dancing';
+      background: linear-gradient(to right, rgb(99, 216, 208), rgb(9, 161, 151));
+      color: #f4f4f4;
+}
+
+#pie{
+  background: #F4f4f4;
+}
+
+nav{
+  background: linear-gradient(to right, rgb(99, 216, 208), rgb(9, 161, 151));
 }
 
 div#div_file{

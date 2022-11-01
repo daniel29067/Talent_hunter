@@ -1,0 +1,61 @@
+@font-face{
+    font-family: 'Dancing';
+    src: url(fuentes/Dancing_Script/DancingScript-VariableFont_wght.ttf);
+}
+
+#title{
+    font-family: 'Dancing';
+    color: #f4f4f4;
+    
+}
+
+div#d{
+    font-family: 'Dancing';
+    background: linear-gradient(to right, rgb(99, 216, 208), rgb(9, 161, 151));
+    color: #f4f4f4;
+    
+}
+
+button.btn{
+    background: linear-gradient( rgb(99, 216, 208), rgb(9, 161, 151));
+    color: #f4f4f4;
+
+}
+
+a#btnn{
+
+    font-family: 'Dancing';
+    display: grid;
+    text-decoration: none;
+    color: #f4f4f4;
+
+}
+
+nav{
+    background: linear-gradient(to right, rgb(99, 216, 208), rgb(9, 161, 151));
+}
+
+#foto{
+    object-fit: cover;
+}
+
+#enca{
+    font-family: 'Dancing';
+
+}
+
+b#nombre{
+    font-size: 25px;
+}
+
+@media (max-width: 1100px){
+
+    div#prueba{
+        text-align: center;
+    }
+
+    div#prueba1{
+        text-align: center;
+    }
+
+}

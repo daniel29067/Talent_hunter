@@ -51,6 +51,7 @@ body{
     flex-wrap: wrap;
     justify-content: center;
     margin: auto;
+    
 }
 
 .container .card{
@@ -63,6 +64,9 @@ body{
     margin: 20px;
     text-align: center;
     transition: all 0.25s;
+    background: linear-gradient( rgb(99, 216, 208), rgb(9, 161, 151));
+    
+    
 }
 
 .container .card:hover{
@@ -76,15 +80,19 @@ body{
     height: 220px;
 }
 
-.container .card h4{
+.container .card h3{
     margin-top: 20px;
     font-weight: 600;
+    color: #F4f4f4;
+    font-family: 'Dancing';
 
 }
 
 .container .card p{
     padding: 0 1rem;
-    font-size: 16px;
+    font-size: 20px;
+    font-family: 'Dancing';
+    color: #F4f4f4;
     font-weight: 600;
 }
 

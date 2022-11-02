@@ -23,64 +23,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Talent Hunter|Crear Entidad</title>
     <link rel="shortcut icon" href="..\vista\img\talent_hunter7-removebg-preview.png">
-    <link rel="stylesheet" href="../vista/css/estilog.css">
+    <link rel="stylesheet" href="../vista/css/estiloredepent.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 </head>
 <body>
 
-  <nav class="navbar bg-light border-bottom border-2 rounded-bottom">
+  <!-- header -->
+
+  <nav class="navbar bg-light border-bottom border-2 rounded-bottom" id="enca">
     <div class="container-fluid px-5">
       <h2 id="title"><b>Talent Hunter</b></h2>
-      
     </div>
   </nav>
+  
+  <!-- contenedor padre -->
+  <div class="container bg-white mt-5 mb-4">
+    
+    <!-- Creamos una fila -->
+    <div class="row mt-3 mx-2 justify-content-center">
+      
+      <!-- Creamos una columna  -->
+      <div class="col-lg-6 border border-2 rounded">
 
-  <div class="container bg-white mt-5 rounded shadow" id="contenedor">
-    <div class="row align-items-stretch">
+        <!-- Contenedor de registro -->
+        <!-- Header -->
 
-      <div class="p-3 ms-auto align-self-center text-center">
-        <h3>Crea una cuenta</h3>
-      </div>
-      <hr>
+        <div class="row rounded border-bottom border-3 text-center py-2" id="enca">
 
-      <form class="row ps-4" method="post" action="..\modelo\registrarent.php" enctype="multipart/form-data">
-        
-        <!--ID-->
-        <div class="col-lg-6 mb-2">       
-          <input type="text" class="form-control" name="id" required placeholder="Ingresa tu Id" />
+            <h3>Crea una cuenta</h3>
+
         </div>
 
-        <!--NOMBRE-->
-        <div class="col-lg-6 mb-2">
-          <input type="text" class="form-control" name="name" required placeholder="Ingresa tu nombre" pattern="[A-Za-zÑñÁÉÍÓÚáéíóú\s]+" />
+        <div class="row pt-3">
+
+          <!-- Inicio de formulario -->
+          <form method="post" action="..\modelo\registrarent.php" enctype="multipart/form-data">
+
+            <div class="row justify-content-center">
+
+              <!--ID-->
+              <div class="col-lg-6 my-1">       
+                <input type="text" class="form-control" name="id" required placeholder="Ingresa tu Id" />
+              </div>
+
+              <!--NOMBRE-->
+              <div class="col-lg-6 my-1">
+                <input type="text" class="form-control" name="name" required placeholder="Ingresa tu nombre" pattern="[A-Za-zÑñÁÉÍÓÚáéíóú\s]+" />
+              </div>
+
+            </div>
+
         </div>
 
-        <!--EMAIL-->
-        <div class="col-lg-12 mb-2">
-          <input type="email" class="form-control" name="email" class="form-control" required placeholder="Ingresa tu email"  />
+        <div class="row">
+
+          <!--EMAIL-->
+          <div class="col-lg-6 my-1">
+            <input type="email" class="form-control" name="email" class="form-control" required placeholder="Ingresa tu email"  />
+          </div>
+
+          <!--PASSWD-->
+          <div class="col-lg-6 my-1">
+            <input type="password" class="form-control" name="pass" class="form-control" required placeholder="Ingresa contraseña" />
+          </div> 
+
         </div>
 
-        <!--PASSWD-->
-        <div class="col-lg-12 mb-2">
-          <input type="password" class="form-control" name="pass" class="form-control" required placeholder="Ingresa contraseña" />
-        </div>  
+        <div class="row">
 
-        <!--PAIS-->
-        <div class="col-lg-6 mb-2">
-          <label for="pais">Pais</label>
-          <select class="form-select" placeholder="Selecciona un pais" required name="pais">
-            <?php 
+          <!--PAIS-->
+          <div class="col-lg-6 my-1">
+
+            <label for="pais">Pais</label>
+
+            <select class="form-select" placeholder="Selecciona un pais" required name="pais">
+              <?php 
                 // use a while loop to fetch data 
                 // from the $all_categories variable 
                 // and individually display as an option
                 while ($pais = mysqli_fetch_array(
                         $all_paises,MYSQLI_ASSOC)):; 
-            ?>
+              ?>
                 <option value="<?php echo $pais["id_pais"];
                     // The value we usually set is the primary key
                 ?>">
@@ -88,43 +116,54 @@
                         // To show the category name to the user
                     ?>
                 </option>
-            <?php 
+              <?php 
                 endwhile; 
                 // While loop must be terminated
-            ?>
-          </select>  
+              ?>
+            </select> 
+            
+          </div>
+
+          <!--REGION-->
+          <div class="col-lg-6 my-1">
+            <label for="region">Region</label>
+            <input type="text" class="form-control" name="region" required placeholder="Ingresa tu region" pattern="[A-Za-zÑñÁÉÍÓÚáéíóú\s]+" />
+          </div>
+
         </div>
 
-        <!--REGION-->
-        <div class="col-lg-6 mb-2">
-          <label for="region">Region</label>
-          <input type="text" class="form-control" name="region" required placeholder="Ingresa tu region" pattern="[A-Za-zÑñÁÉÍÓÚáéíóú\s]+" />
+        <div class="row">
+
+           <!--DEP-->
+           <div class="col-lg-4 my-1">
+            <label for="deporte">Deporte</label>
+            <input type="text" class="form-control" name="deporte" required placeholder="Ingresa el Deporte" pattern="[A-Za-zÑñÁÉÍÓÚáéíóú\s]+" />
+          </div>
+
+          <!--foto-->
+          <div class="col-lg-8 my-1">
+            <label for="fotop">Foto perfil</label>
+            <input required type="file" class="form-control" name="foto"  />
+          </div>
+
         </div>
 
-        <!--DEP-->
-        <div class="col-lg-6 mb-2">
-          <label for="deporte">Deporte</label>
-          <input type="text" class="form-control" name="deporte" required placeholder="Ingresa el Deporte" pattern="[A-Za-zÑñÁÉÍÓÚáéíóú\s]+" />
-        </div>   
+        <div class="row">
 
-        <!--foto-->
-        <div class="col-lg-12 gap-2 mb-2">
-          <label for="fotop">Foto perfil</label>
-          <input required type="file" class="form-control" name="foto"  />
+          <!--descripción-->
+          <div class="col-lg-12 my-1">
+            <label for="descripcion">Descripción</label>
+            <textarea name="description" class="form-control"></textarea>
+          </div>
+
         </div>
 
-        <!--descripción-->
-        <div class="col-lg-12 mb-4">
-          <label for="descripcion">Descripción</label>
-          <textarea name="description" class="form-control"></textarea>
-        </div>
+        <div class="row d-md-flex justify-content-md-end pb-3 text-end">
 
-        <div class="row-lg-6 d-md-flex justify-content-md-end pb-3 text-end">
-
-          <div class="col">
-            <input class="btn btn-primary" required type="submit" name="submit" value="Registrarse"/>
+          <div class="col-lg-12 my-1 mt-3">
+            <input class="btn" required type="submit" name="submit" value="Registrarse" id="btnn"/>
             <a class="navbar-brand text-end" href="../vista/index.php" >
-              <button type="button" class="btn btn-secondary">Cancelar</button>
+              <button type="button" class="btn" id="btnn">Cancelar</button>
             </a>
           </div>
 
@@ -132,8 +171,11 @@
         
       </form>
 
+      </div>
+    
     </div>
+  
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+
 </body>
 </html>

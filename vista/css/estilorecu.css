@@ -3,11 +3,14 @@
     src: url(fuentes/Dancing_Script/DancingScript-VariableFont_wght.ttf);
 }
 
-#title{
+input#btnn{
     font-family: 'Dancing';
+    color: #f4f4f4;
+    background: linear-gradient( rgb(99, 216, 208), rgb(9, 161, 151));
 }
 
 nav#enca{
+    font-family: 'Dancing';
     background: linear-gradient(to right, rgb(99, 216, 208), rgb(9, 161, 151));
     color: #f4f4f4;
 }
@@ -16,9 +19,5 @@ div#enca{
     font-family: 'Dancing';
     background: linear-gradient(to right, rgb(99, 216, 208), rgb(9, 161, 151));
     color: #f4f4f4;
-}
-
-body{
-    font-family:'Courier New', Courier, monospace;
 }
 

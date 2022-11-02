@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Talent Hunter|Login</title>
     <link rel="shortcut icon" href="../vista/img/talent_hunter7-removebg-preview.png">
-    <link rel="stylesheet" href="../vista/css/estiloindex.css">
+    <link rel="stylesheet" href="../vista/css/estiloinde.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 </head>
 <body>
-  <div class="container w-75 bg-primary mt-5 rounded shadow">
+  <div class="container w-75 bg-primary mt-5 rounded shadow mb-4">
     <div class="row align-items-stretch">
       <div class="col bg d-none d-lg-block col-md-5 col-lg-5 col-xl-6 rounded-left">
 
@@ -33,13 +33,13 @@
           </div>
 
           <div class="d-grid">
-            <input type="submit" class="btn btn-primary" name="signup" value="Login" />
+            <input type="submit" class="btn" name="signup" value="Login" id="btnn" />
           </div>
 
           <div class="my-3">
-            <span>¿Nuevo usuario? <a href="../controlador/registro.php">Registrarse</a></span>
+            <span>¿Nuevo usuario? <a href="../controlador/registro.php" id="btnn">Registrarse</a></span>
             <br>
-            <span><a href="../vista/resetpass.php">Recuperar Password</a></span>
+            <span><a href="../vista/resetpass.php" id="btnn">Recuperar Password</a></span>
           </div>
         </form>
       </div>

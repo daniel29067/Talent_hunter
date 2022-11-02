@@ -27,7 +27,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Talent Hunter|Crear Deportista</title>
-    <link rel="stylesheet" href="../vista/css/estiloredep.css">
+    <link rel="stylesheet" href="../vista/css/estiloredepent.css">
     <link rel="shortcut icon" href="..\vista\img\talent_hunter7-removebg-preview.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 </head>
@@ -166,7 +166,7 @@
 
         <div class="row d-md-flex justify-content-md-end pb-3 text-end">
 
-          <div class="col-lg-6 my-1">
+          <div class="col-lg-12 my-1 mt-3">
             <input class="btn" required type="submit" name="submit" value="Registrarse" id="btnn"/>
             <a class="navbar-brand text-end" href="../vista/index.php" >
               <button type="button" class="btn" id="btnn">Cancelar</button>

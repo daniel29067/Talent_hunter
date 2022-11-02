@@ -24,7 +24,7 @@
         <a href="../controlador/registrodep.php" name="create_dep" value="Deportista">
             <div class="card">
                 <img src="../vista/img/fondos-deportivos-en-vectores-gratis.jpg">
-                <h3>Deportista</h3>
+                <b><h3>Deportista</h3></b>
                 <p>Con esta opcion podras registrarte como un jugador, 
                     teniendo la oportunidad de jugar con una entidad 
                     deportiva que le guste.</p>
@@ -33,7 +33,7 @@
         <a href="../controlador/registroent.php" name="create_ent" value="Entidad">
             <div class="card">
                 <img src="../vista/img/icono-de-la-línea-del-estadio-deportivo-cartel-arena-complejo-vector-símbolo-concepto-esquema-colorido-delgada-azul-y-naranja-163627333.jpg">
-                <h3>Entidad</h3>
+                </b><h3>Entidad</h3></b>
                 <p>Con esta opcion podras registrarte como una Entidad, 
                     teniendo la oportunidad de encontrar nuevos jugadores 
                     potenciales para su equipo.</p>

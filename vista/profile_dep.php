@@ -41,7 +41,7 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Talent Hunter|Deportista</title>
     <link rel="shortcut icon" href="..\vista\img\talent_hunter7-removebg-preview.png">
-    <link rel="stylesheet" href="css/estiloprode.css">
+    <link rel="stylesheet" href="css/estiloprodeport.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <script src:"../js/jquery.jscroll.js"></script>
     </head>
@@ -69,7 +69,7 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
 
   <!-- contenedor padre -->
 
-  <div class="container bg-white mt-1 mb-4">
+  <div class="container bg-white mt-3">
     
     <!-- contenedor hijo nuevas publicaciones -->
     <div class="row mt-3 mx-2 justify-content-center">
@@ -108,28 +108,44 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
 
           <div class="row p-4">
 
-            <div class="col-md-4 gap-2 rounded text-center align-items-center justify-content-center p-2" id="div_file">
+            <div class="gap-2 rounded text-center align-items-center justify-content-center p-2" >
 
-              <b>
+              <div class="file">
 
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16" id="svg">
-                  <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm4 0v6h8V1H4zm8 8H4v6h8V9zM1 1v2h2V1H1zm2 3H1v2h2V4zM1 7v2h2V7H1zm2 3H1v2h2v-2zm-2 3v2h2v-2H1zM15 1h-2v2h2V1zm-2 3v2h2V4h-2zm2 3h-2v2h2V7zm-2 3v2h2v-2h-2zm2 3h-2v2h2v-2z"/>
-                </svg>
-            
-                Video &nbsp;&nbsp; /
+                <div class="row justify-content-between">
+                  
+                  <div class="col-lg-4 p-1 m-1 align-self-start rounded " id="div_file">
 
-                &nbsp;&nbsp;
-            
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-images" viewBox="0 0 16 16">
-                  <path d="M4.502 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
-                  <path d="M14.002 13a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2V5A2 2 0 0 1 2 3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-1.998 2zM14 2H4a1 1 0 0 0-1 1h9.002a2 2 0 0 1 2 2v7A1 1 0 0 0 15 11V3a1 1 0 0 0-1-1zM2.002 4a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1h-10z"/>
-                </svg>
+                    <label for="archivo">
 
-                Foto
+                      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-film" viewBox="0 0 16 16" id="svg">
+                        <path d="M0 1a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1zm4 0v6h8V1H4zm8 8H4v6h8V9zM1 1v2h2V1H1zm2 3H1v2h2V4zM1 7v2h2V7H1zm2 3H1v2h2v-2zm-2 3v2h2v-2H1zM15 1h-2v2h2V1zm-2 3v2h2V4h-2zm2 3h-2v2h2V7zm-2 3v2h2v-2h-2zm2 3h-2v2h2v-2z"/>
+                      </svg>
 
-              </b>
+                      Video &nbsp;&nbsp; /
 
-              <input type="file" name="foto" id="file-1" class="inputfile inputfile-1" data-multiple-caption="{count} files selected"/>
+                      &nbsp;&nbsp;
+
+                      <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-images" viewBox="0 0 16 16">
+                        <path d="M4.502 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+                        <path d="M14.002 13a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2V5A2 2 0 0 1 2 3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-1.998 2zM14 2H4a1 1 0 0 0-1 1h9.002a2 2 0 0 1 2 2v7A1 1 0 0 0 15 11V3a1 1 0 0 0-1-1zM2.002 4a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1h-10z"/>
+                      </svg>
+
+                      Foto
+
+                    </label>
+
+                    <input type="file" name="foto" id="archivo" class="inputfile inputfile-1" data-multiple-caption="{count} files selected"/>
+
+                  </div>
+
+                  <div class="col-lg-4 align-self-center">
+                    <span id="nombres"></span>
+                  </div>
+
+                </div>
+
+              </div>
 
             </div>
 
@@ -252,6 +268,14 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
   });
     
   </script>
+
+<script type="text/javascript">
+            let archivo = document.querySelector('#archivo');
+            archivo.addEventListener('change',() => {
+              document.querySelector('#nombres').innerText = archivo.files[0].name;
+            });
+
+</script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
        

@@ -42,26 +42,30 @@ $aid = mysqli_real_escape_string($mysqli,$_SESSION['id_user']);
    /* $fotos = mysql_query("SELECT * FROM fotos WHERE publicacion = '$lista[id_pub]'");
     $fot = mysql_fetch_array($fotos);*/
   ?>
- <!-- START PUBLICACIONES -->
-          <!-- Box Comment -->
-          <div class="box box-widget">
-            <div class="box-header with-border">
-              <div class="user-block">
-               
-              </div>
-              <!-- /.user-block -->
-              <div class="box-tools">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-              </div>
-              <!-- /.box-tools -->
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-              <!-- post text -->
-             
 
-              <?php 
+  <br>
+  <br>
+  
+
+  <div class="container bg-white">
+
+    <div class="row-fluid justify-content-center">
+
+      <div class="col border border-2 rounded">
+
+      <div class="row">
+
+        <!-- /.user-block -->
+        <div class="col-lg-6 box-tools">
+          <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+          </button>
+        </div>
+
+        <div class="row box-body">
+          
+        <!-- post text -->
+        
+        <?php 
               if($_SESSION['id_rol']==1){
               if($lista['post'] != 0)
               {
@@ -112,6 +116,31 @@ $aid = mysqli_real_escape_string($mysqli,$_SESSION['id_user']);
               
         <!-- /.col -->
         <!-- END PUBLICACIONES -->
+
+      </div>
+
+      </div>
+
+    </div>
+
+  </div>
+  
+
+
+
+ <!-- START PUBLICACIONES -->
+          <!-- Box Comment -->
+
+          <div class="box box-widget">
+            <div class="box-header with-border">
+              <div class="user-block">
+               
+              </div>
+              
+              <!-- /.box-tools -->
+            </div>
+            <!-- /.box-header -->
+            
     
     <br><br>
 

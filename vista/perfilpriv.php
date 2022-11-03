@@ -321,21 +321,48 @@ include("../modelo/connect_db.php");
 
             <!-- fin contenedor hijo a  la izquierda -->
 
-            <div class="col-lg-7 ">
+            <div class="col-lg-7">
 
-                <div class="row mx-1 mt-3 border border-3 rounded shadow">
+                <div class="row-fluid border border-3 shadow rounded m-3">
 
-                <!-- /.col -->
-                <ul class="nav nav-tabs">
-                    <li class="<?php echo $pag == 'actividad' ? 'active' : ''; ?>"><a href="?id=<?php echo $_SESSION['id_user'];?>&perfil=actividad">Actividad</a></li>
-                </ul>
+                    <div class="row-fluid border-bottom rounded text-center" id="d">
+    
+                        <ul class="nav nav-tabs text-center">
+                            <li class="<?php echo $pag == 'actividad' ? 'active' : ''; ?>"><a href="?id=<?php echo $_SESSION['id_user'];?>&perfil=actividad">Actividad</a></li>
+                        </ul> 
 
-                <?php
-                $pagina = isset($_GET['perfil']) ? strtolower($_GET['perfil']) : 'actividad';
-                require_once '../controlador/actividad.php';
-                ?>
+                    </div>
+                                
+                </div>
+                                
+            </div>
+
+            
+
+
+                <!-- 
+
+                <div class="row-fluid border-bottom border-3 p-3 shadow rounded">
+
+                    <div class="row-fluid text-center">
+
+                        
+                        
+
+                    </div>   
 
                 </div>
+
+                <div class="row-fluid">
+
+                    <?php
+                    $pagina = isset($_GET['perfil']) ? strtolower($_GET['perfil']) : 'actividad';
+                    require_once '../controlador/actividad.php';
+                    ?>
+
+                </div>
+
+                                -->
 
             </div>
 

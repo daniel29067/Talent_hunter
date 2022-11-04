@@ -55,7 +55,7 @@ while ($lista=mysqli_fetch_array($consulta)) {
 
         <div class="col-md-6">
 
-          <img height="30px" class="rounded-circle" src="../vista/img/profile_photos/<?php echo $use['profile_foto']; ?>" alt="User Image">
+          <img id="fotoo" src="../vista/img/profile_photos/<?php echo $use['profile_foto']; ?>" alt="User Image">
   
           <?php 
     
@@ -145,7 +145,7 @@ while ($lista=mysqli_fetch_array($consulta)) {
           {
             ?>
             
-            <video width="100%" height="240" controls>
+            <video width="100%" height="100%" controls>
               <source src="../vista/publicaciones/<?php echo $lista['post'];?>">
             </video>
 

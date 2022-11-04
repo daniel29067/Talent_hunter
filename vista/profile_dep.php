@@ -41,7 +41,7 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Talent Hunter|Deportista</title>
     <link rel="shortcut icon" href="..\vista\img\talent_hunter7-removebg-preview.png">
-    <link rel="stylesheet" href="css/estiloprodeport.css">
+    <link rel="stylesheet" href="css/estilprodep.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <script src:"../js/jquery.jscroll.js"></script>
     </head>
@@ -62,7 +62,7 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
       <!-- <a class="navbar-brand" href="" id="title"> --><h2 id="title"><b>Talent Hunter</b></h2> <!-- </a> -->
       <a class="navbar-brand text-end" href="../vista/perfilpriv.php">
         <!--<img height="100px" src="data:Image/png;base64,<?php echo base64_encode($row['profile_foto']); ?>"/>   --->
-        <img height="30px" class="rounded-circle" src="../vista/img/profile_photos/<?php echo $_SESSION['profile_foto']; ?>"/> 
+        <img id="fot" src="../vista/img/profile_photos/<?php echo $_SESSION['profile_foto']; ?>"/> 
       </a>
     </div>
   </nav>
@@ -83,7 +83,7 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
           <div class="col-3">
 
             <!--<img height="100px" src="data:Image/png;base64,<?php echo base64_encode($row['profile_foto']); ?>"/>   --->
-            <img height="40px" class="rounded-circle"" src="../vista/img/profile_photos/<?php echo $_SESSION['profile_foto']; ?>"/>
+            <img id="fot" src="../vista/img/profile_photos/<?php echo $_SESSION['profile_foto']; ?>"/>
             <?php
             }
             ?> 

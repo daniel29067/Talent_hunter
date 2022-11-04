@@ -1,0 +1,31 @@
+@font-face{
+    font-family: 'Dancing';
+    src: url(fuentes/Dancing_Script/DancingScript-VariableFont_wght.ttf);
+}
+
+div#pie{
+
+    font-family: 'Dancing';
+    background: linear-gradient(to right, rgb(99, 216, 208), rgb(9, 161, 151));
+    color: #f4f4f4;
+    font-size: 13px;
+    
+    
+}
+
+a#op{
+    text-decoration: none;
+    color: black;
+}
+
+span#fecha{
+    font-size: 13px;
+}
+
+a#btnn{
+
+    color: rgb(9, 161, 151);
+    font-family: 'Dancing';
+    font-size: 17px;
+
+}

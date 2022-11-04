@@ -136,12 +136,12 @@ include("../modelo/connect_db.php");
                         <div class="row border-bottom border-2 p-1 d-flex justify-content-center align-items-center">
 
                             <!-- Columna de imagen -->
-                            <div class="col-lg-6 d-flex justify-content-center align-items-center ">
+                            <div class="col-lg-6 d-flex justify-content-center align-items-center">
                         
                                 <!-- boton configuracion -->
                                 <a class="navbar-brand text-end" href="../vista/perfilpriv.php">
                                     <!--<img height="100px" src="data:Image/png;base64,<?php echo base64_encode($row['profile_foto']); ?>"/>   --->
-                                    <img id="foto" height="130px" class=" rounded-circle" src="../vista/img/profile_photos/<?php echo $_SESSION['profile_foto']; ?>" />
+                                    <img id="foto" src="../vista/img/profile_photos/<?php echo $_SESSION['profile_foto']; ?>" />
                                 </a>                      
                     
                             </div>
@@ -263,14 +263,14 @@ include("../modelo/connect_db.php");
 
                                 <?php if ($_SESSION['id_rol'] == 1) { ?>
                                     
-                                    <a href="../controlador/actualizardep.php" id="btnn">
+                                    <a href="../controlador/actualizardep.php" id="btnnn">
                                         <button type="button" class="btn" name="actualizadep" value="Editar">Editar</button>
                                         <!-- <input type="button" class="btn btn-primary" name="actualizadep" value="Editar" /> -->
                                     </a>
 
                                 <?php } elseif ($_SESSION['id_rol'] == 2) { ?>
 
-                                    <a href="../controlador/actualizarent.php" id="btnn">
+                                    <a href="../controlador/actualizarent.php" id="btnnn">
                                         <button type="button" class="btn" name="actualizadep" value="Editar">Editar</button>
                                         <!-- <input type="button" class="btn btn-primary" name="actualizadep" value="Editar" /> -->
                                     </a>
@@ -283,14 +283,14 @@ include("../modelo/connect_db.php");
 
                                 <?php if ($_SESSION['id_rol'] == 1) { ?>
 
-                                    <a href="../vista/eliminardep.php" id="btnn">
+                                    <a href="../vista/eliminardep.php" id="btnnn">
                                         <button type="button" class="btn" name="delete" value="Eliminar cuenta">Eliminar cuenta</button>
                                         <!-- <input type="button" class="btn btn-primary" name="delete" value="Eliminar cuenta"/> -->
                                     </a>
                                     
                                 <?php } elseif ($_SESSION['id_rol'] == 2) { ?>
 
-                                    <a href="../vista/eliminarent.php" id="btnn">
+                                    <a href="../vista/eliminarent.php" id="btnnn">
                                         <button type="button" class="btn" name="delete" value="Eliminar cuenta">Eliminar cuenta</button>
                                         <!-- <input type="button" class="btn btn-primary" name="delete" value="Eliminar cuenta"/> -->
                                     </a>
@@ -301,7 +301,7 @@ include("../modelo/connect_db.php");
 
                                 <div class="row-fluid m-3">
 
-                                    <a href="../modelo/desconectar.php" id="btnn">
+                                    <a href="../modelo/desconectar.php" id="btnnn">
                                         <button type="button" class="btn" name="logout" value="Logout" onclick="return Confirmlogout()">Cerrar Sesión</button>
                                         <!-- <input type="button" class="btn btn-primary" name="logout" value="Logout" onclick="return Confirmlogout()"/> -->
                                     </a>
@@ -323,47 +323,27 @@ include("../modelo/connect_db.php");
 
             <div class="col-lg-7">
 
-                <div class="row-fluid border border-3 shadow rounded m-3">
+                <div class="row-fluid border rounded border-3 m-3">
 
-                    <div class="row-fluid border-bottom rounded text-center" id="d">
+                    <div class="row-fluid rounded-top text-center" id="d">
     
-                        <ul class="nav nav-tabs text-center">
-                            <li class="<?php echo $pag == 'actividad' ? 'active' : ''; ?>"><a href="?id=<?php echo $_SESSION['id_user'];?>&perfil=actividad">Actividad</a></li>
+                        <ul class="nav nav-tabs align-items-center justify-content-center">
+                            <li class="<?php echo $pag == 'actividad' ? 'active' : ''; ?>"><a href="?id=<?php echo $_SESSION['id_user'];?>&perfil=actividad" id="actividad">Actividad</a></li>
                         </ul> 
+
+                    </div>
+
+                    <div class="row-fluid ">
+
+                        <?php
+                        $pagina = isset($_GET['perfil']) ? strtolower($_GET['perfil']) : 'actividad';
+                        require_once '../controlador/actividad.php';
+                        ?>
 
                     </div>
                                 
                 </div>
                                 
-            </div>
-
-            
-
-
-                <!-- 
-
-                <div class="row-fluid border-bottom border-3 p-3 shadow rounded">
-
-                    <div class="row-fluid text-center">
-
-                        
-                        
-
-                    </div>   
-
-                </div>
-
-                <div class="row-fluid">
-
-                    <?php
-                    $pagina = isset($_GET['perfil']) ? strtolower($_GET['perfil']) : 'actividad';
-                    require_once '../controlador/actividad.php';
-                    ?>
-
-                </div>
-
-                                -->
-
             </div>
 
         </div>

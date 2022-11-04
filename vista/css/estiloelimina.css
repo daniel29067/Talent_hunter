@@ -9,7 +9,7 @@ input#btnn{
     background: linear-gradient( rgb(99, 216, 208), rgb(9, 161, 151));
 }
 
-nav#enca{
+nav#encas{
     background: linear-gradient(to right, rgb(99, 216, 208), rgb(9, 161, 151));
     color: #f4f4f4;
 }
@@ -19,6 +19,11 @@ div#enca{
     background: linear-gradient(to right, rgb(99, 216, 208), rgb(9, 161, 151));
     color: #f4f4f4;
 }
+
+h2#title{
+    font-family: 'Dancing';
+}
+
 
 button#btnn{
 

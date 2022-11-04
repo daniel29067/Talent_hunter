@@ -56,12 +56,12 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
     <title>Talent Hunter|Delete</title>
     <link rel="shortcut icon" href="../vista/img/talent_hunter7-removebg-preview.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/estiloeliminar.css">
+    <link rel="stylesheet" href="css/estiloelimina.css">
 </head>
 
 <body>
     
-    <nav class="navbar bg-light border-bottom border-2 rounded-bottom" id="enca">
+    <nav class="navbar bg-light border-bottom border-2 rounded-bottom" id="encas">
     	<div class="container-fluid px-5">
       		<h2 id="title"> <b> Talent Hunter</b></h2>
     	</div>

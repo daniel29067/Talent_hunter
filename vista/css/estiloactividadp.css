@@ -22,6 +22,12 @@ span#fecha{
     font-size: 13px;
 }
 
+li#fecha{
+    font-family: 'Dancing';
+    font-size: 13px;
+    color: #9ba4a4;
+}
+
 a#btnn{
 
     color: rgb(9, 161, 151);

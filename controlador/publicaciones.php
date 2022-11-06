@@ -166,7 +166,7 @@ while ($lista=mysqli_fetch_array($consulta)) {
 
       <div class="col">
         <?php 
-        echo "<b>".$use['name']."</b>"." ".$lista['contenido'];
+        echo $lista['contenido'];
         ?>
       </div>
      

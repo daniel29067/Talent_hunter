@@ -54,6 +54,20 @@ nav{
     object-fit: cover;
 }
 
+a#btnm{
+
+    text-decoration: none;
+    color: rgb(9, 161, 151);
+    font-family: 'Dancing';
+
+}
+
+li#op:hover{
+    transition: all .025s;
+    background-color: rgb(221, 229, 228);
+
+}
+
 #enca{
     font-family: 'Dancing';
 

@@ -201,7 +201,7 @@ include("../modelo/connect_db.php");
 
                     </div>
 
-                    <div class="row justify-content-around align-items-center" id="informacion">
+                    <div class="row justify-content-around align-items-center py-3" id="informacion">
 
                         <div class="col-lg-5 d-flex justify-content-center align-items-center">
                         

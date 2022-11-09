@@ -42,75 +42,70 @@ $aid = mysqli_real_escape_string($mysqli,$_GET['id']);
    /* $fotos = mysql_query("SELECT * FROM fotos WHERE publicacion = '$lista[id_pub]'");
     $fot = mysql_fetch_array($fotos);*/
   ?>
- <!-- START PUBLICACIONES -->
-          <!-- Box Comment -->
-          <div class="box box-widget">
-            <div class="box-header with-border">
-              <div class="user-block">
-               
-              </div>
-              <!-- /.user-block -->
-              <div class="box-tools">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-                </button>
-              </div>
-              <!-- /.box-tools -->
-            </div>
-            <!-- /.box-header -->
-            <div class="box-body">
-              <!-- post text -->
-             
 
-              <?php 
-              if($_SESSION['id_rol']==1){
-              if($lista['post'] != 0)
-              {
-                $info=new SplFileInfo($lista['post']);
-                $info2= $info->getExtension();
-                if($info2=='mp4'||$info2=='mov' ||$info2=='wmv'||$info2=='avi'){
+<link rel="stylesheet" href="../vista/css/estiloactividadp.css">
 
-              ?>
-              <video width="100%" height="240" controls>
-					    <source src="../vista/publicaciones/<?php echo $lista['post'];?>">
-				      </video>
-              <?php
-                }
-                else{?>
-                <img src="../vista/publicaciones/<?php echo $lista['post'];?>" width="100%">
+<div class="container-fluid bg-white">
 
-<?php
-                }
-          	  }
-            }
-            elseif($_SESSION['id_rol']==2){
-              if($lista['post'] != 0)
-              {
-                $info=new SplFileInfo($lista['post']);
-                $info2= $info->getExtension();
-                if($info2=='mp4'||$info2=='mov' ||$info2=='wmv'||$info2=='avi'){
+  <div class="row justify-content-center">
 
-              ?>
-              <video width="100%" height="240" controls>
-					    <source src="../vista/publicaciones/<?php echo $lista['post'];?>">
-				      </video>
-              <?php
-                }
-                else{?>
-                <img src="../vista/publicaciones/<?php echo $lista['post'];?>" width="100%">
-                <?php
-                }
-          	  }
-            }
-?>
- <p><?php echo $lista['contenido'];?></p>
-<span class="description"><?php echo $lista['fecha'];?></span>
+    <div class="col-lg-9 border border-3 rounded shadow p-0 m-3">
 
-              <br><br>
-              
-        <!-- /.col -->
-        <!-- END PUBLICACIONES -->
+      <div class="row-fluid border-top border-2 mt-1">
+        <!-- post text -->
+      
+        <?php 
+        if($_SESSION['id_rol']==1){
+        if($lista['post'] != 0)
+        {
+        $info=new SplFileInfo($lista['post']);
+        $info2= $info->getExtension();
+        if($info2=='mp4'||$info2=='mov' ||$info2=='wmv'||$info2=='avi'){
+
+        ?>
+        <video width="100%" height="100%" controls>
+          <source src="../vista/publicaciones/<?php echo $lista['post'];?>">
+        </video>
+        <?php
+        }
+        else{?>
+
+        <img src="../vista/publicaciones/<?php echo $lista['post'];?>">
+
+        <?php
+        }
+        }
+        }
+        elseif($_SESSION['id_rol']==2){
+        if($lista['post'] != 0)
+        {
+        $info=new SplFileInfo($lista['post']);
+        $info2= $info->getExtension();
+        if($info2=='mp4'||$info2=='mov' ||$info2=='wmv'||$info2=='avi'){
+
+        ?>
+        <video width="100%" height="100%" controls>
+          <source src="../vista/publicaciones/<?php echo $lista['post'];?>">
+        </video>
+        <?php
+        }
+        else{?>
+        <img src="../vista/publicaciones/<?php echo $lista['post'];?>" width="100%">
+        <?php
+        }
+        }
+        }
+        ?>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+          
     
-    <br><br>
+  <br><br>
 
 	<?php
 	}

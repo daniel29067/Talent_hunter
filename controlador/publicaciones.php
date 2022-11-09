@@ -65,7 +65,7 @@ while ($lista=mysqli_fetch_array($consulta)) {
 
           &nbsp;
   
-          <span class="description" style="cursor:pointer;" id="nombre"><?php echo "<b>".$use['name']."</b>";?></span>
+          <span class="description" style="cursor: pointer;" id="nombre"><?php echo "<b>".$use['name']."</b>";?></span>
   
           <?php
   
@@ -73,7 +73,7 @@ while ($lista=mysqli_fetch_array($consulta)) {
       
           ?>
 
-          <span class="description" onclick="location.href='perfil.php?id=<?php echo $use['id_user'];?>';">
+          <span class="description" style="cursor: pointer;" onclick="location.href='perfil.php?id=<?php echo $use['id_user'];?>';">
 
             <?php echo "<b>".$use['name']."</b>";?>
 
@@ -186,9 +186,6 @@ while ($lista=mysqli_fetch_array($consulta)) {
 
 <!-- Final Diseño y publicaciones -->
 
-    </div>
-
-  </div>
 
 <?php
 

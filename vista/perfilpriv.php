@@ -104,7 +104,7 @@ include("../modelo/connect_db.php");
 
                 ?>
 
-                <a class="navbar-brand" href="../vista/profile_dep.php" id="title">
+                <a class="navbar-brand" href="../vista/profile_ent.php" id="title">
 
                     <h2><b>Talent Hunter</b></h2> 
 
@@ -121,7 +121,7 @@ include("../modelo/connect_db.php");
 
         <!-- Contenedor Padre -->
 
-        <div class="container-fluid bg-white mt-1 mb-4" >
+        <div class="container-fluid bg-white mt-1 mb-4">
 
             <div class="row justify-content-center m-2">
 

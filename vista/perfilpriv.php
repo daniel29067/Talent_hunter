@@ -187,6 +187,12 @@ include("../modelo/connect_db.php");
 
                                     <?php } ?>
                                 </li>
+                                <li id="op">
+                                    <a href="../vista/contrato.php" id="btnm" name="contrato" value="contrato">
+                                        Contratos
+                                        <!-- <input type="button" class="btn btn-primary" name="logout" value="Logout" onclick="return Confirmlogout()"/> -->
+                                    </a>
+                                </li>
 
                                 <li id="op">
                                     <a href="../modelo/desconectar.php" id="btnm" name="logout" value="Logout" onclick="return Confirmlogout()">

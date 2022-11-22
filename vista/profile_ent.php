@@ -38,7 +38,7 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Talent Hunter|Entidad</title>
     <link rel="shortcut icon" href="..\vista\img\talent_hunter7-removebg-preview.png">
-    <link rel="stylesheet" href="css/estilprodep.css">
+    <link rel="stylesheet" href="css/estiloproent.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <script src:"../js/jquery.jscroll.js"></script>
     <style>
@@ -51,7 +51,8 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
         margin: -500px auto;
 
       }
-      
+
+  
     </style>
     </head>
 <body>
@@ -68,10 +69,42 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
   <nav class="navbar border-bottom border-2 rounded-bottom">
     <div class="container-fluid px-5">
       <!-- <a class="navbar-brand" href="" id="title"> --><h2 id="title"><b>Talent Hunter</b></h2> <!-- </a> -->
-      <a class="navbar-brand text-end" href="../vista/perfilpriv.php">
-        <!--<img height="100px" src="data:Image/png;base64,<?php echo base64_encode($row['profile_foto']); ?>"/>   --->
-        <img id="fot" src="../vista/img/profile_photos/<?php echo $_SESSION['profile_foto']; ?>"/> 
-      </a>
+
+      <div class="navbar-brand text-end">
+
+        <div class="row">
+
+          <div class="col-lg-9">
+
+            <div class="input-group w-100">
+
+              <span class="input-group-text" id="basic-addon1">
+
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
+                </svg>
+
+              </span>
+
+              <input type="text" id="bus" class="form-control" placeholder="Buscar..." aria-label="Input group example" aria-describedby="basic-addon1">
+            
+            </div>
+
+          </div>
+
+          <div class="col-lg-3">
+
+            <a href="../vista/perfilpriv.php">
+              <!--<img height="100px" src="data:Image/png;base64,<?php echo base64_encode($row['profile_foto']); ?>"/>   --->
+              <img id="fot" src="../vista/img/profile_photos/<?php echo $_SESSION['profile_foto']; ?>"/> 
+            </a>
+
+          </div>
+        
+        </div>
+
+      </div >
+
     </div>
   </nav>
 

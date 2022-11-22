@@ -26,10 +26,15 @@ button#btnn{
 
 }
 
+input#bus{
+    font-family: 'Dancing';
+}
+
 #basic-addon1{
 
   background: linear-gradient(to right, rgb(99, 216, 208), rgb(9, 161, 151));
   color: #F4f4f4;
+  
 }
 
 div#enca{
@@ -73,6 +78,8 @@ div#foto:hover{
   transition: all 0.25s;
 
 }
+
+
 
 img#fot{
   width: 45px;

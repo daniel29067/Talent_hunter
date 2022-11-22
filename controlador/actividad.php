@@ -64,11 +64,12 @@ $aid = mysqli_real_escape_string($mysqli,$_SESSION['id_user']);
           <ul class="dropdown-menu text-center">
 
             <li id="op">
-              <a class="btn " href="../controlador/actualizarpost.php" name="actualizarpost" value="Editar" id="btnn">Editar</a>
+              <a class="btn " href="../controlador/actualizarpost.php?idpost=<?php echo $lista['id_pub'] ?>" name="actualizarpost" value="Editar" id="btnn">Editar</a>
             </li>
                                           
             <li id="op">
-              <a class="btn" href="../modelo/eliminarpost.php" name="deletepost" value="Eliminar" id="btnn">Eliminar</a>
+
+              <a class="btn" href="../modelo/eliminarpost.php?idpost=<?php echo $lista['id_pub'] ?>" name="deletepost" value="Eliminar" id="btnn" onclick="return Confirmdelete()" >Eliminar</a>
             </li>
 
             <li><hr class="dropdown-divider"></li>

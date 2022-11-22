@@ -44,7 +44,7 @@ else{
 
   else
   {
-	$nombre = 'defect.jpg';
+	$nombre=$_SESSION['profile_foto'];
   }
 
 

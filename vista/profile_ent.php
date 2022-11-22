@@ -195,7 +195,7 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
       $code = $next_increment.$alea;
       
       $rfoto = $_FILES['foto']['tmp_name'];
-      $formatos_permitidos =  array('mp4','mov' ,'wmv','avi',' ');
+      $formatos_permitidos =  array('jpg','bmp' ,'gif','tif','png','jpeg');
       $archivo = $_FILES['foto']['name'];
       $extension = pathinfo($archivo, PATHINFO_EXTENSION);
       

@@ -325,6 +325,28 @@ include("../modelo/connect_db.php");
                             </p>
 
                         </div>
+                        <div class="col-lg-3">
+
+                            <?php if ($_SESSION['id_rol'] == 1) { ?>
+
+                            <strong><i class="fa fa-book margin-r-5"></i> Estado</strong>
+
+                            <p class="text-muted">
+                            <?php  
+                             $lista=mysqli_fetch_array(mysqli_query($mysqli,"SELECT * FROM estado WHERE id_estado= $_SESSION[id_estado]"));
+                             $lista2=mysqli_fetch_array(mysqli_query($mysqli,"SELECT * FROM contratos WHERE id_dep= $_SESSION[id_user]"));
+                             $lista3=mysqli_fetch_array(mysqli_query($mysqli,"SELECT * FROM user WHERE id_user= $lista2[id_ent]"));
+                             if( $_SESSION['id_estado']==1){
+                                echo "Agente libre"; } 
+                             elseif($_SESSION['id_estado']==2){
+                                    echo $lista['des_estate']." por ".$lista3['name'];
+                                }
+                             ?>
+                            </p>
+
+                            <?php } ?>
+
+                        </div>
 
                     </div>
 

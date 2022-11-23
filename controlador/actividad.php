@@ -126,6 +126,17 @@ $aid = mysqli_real_escape_string($mysqli,$_SESSION['id_user']);
           }
           ?>
         </div>
+        <div class="row pt-3">
+
+      <div class="col">
+        <?php 
+        echo $lista['contenido'];
+        ?>
+      </div>
+     
+    </div>
+
+</div>
 
       </div>
 

@@ -62,7 +62,7 @@ else{if (isset($_SESSION['start']) && (time() - $_SESSION['start'] >300)) {
   
 <!-- codigo scroll -->
 <div class="scroll">
-    <?php require_once '../vista/newpost.php'; 
+    <?php require_once '../controlador/newpost.php'; 
     ?>
   </div>
   <!-- codigo scroll -->

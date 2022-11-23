@@ -54,7 +54,7 @@ include("../modelo/connect_db.php");
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Talent Hunter|<?php echo $_SESSION['name'] ?>  configuracion</title>
+        <title>Talent Hunter|Contratos</title>
         <link rel="shortcut icon" href="..\vista\img\talent_hunter7-removebg-preview.png">
         <link rel="stylesheet" href="../vista/css/estilopreprivva.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
@@ -188,7 +188,7 @@ include("../modelo/connect_db.php");
                                     <?php } ?>
                                 </li>
                                 <li id="op">
-                                    <a href="../vista/contratos.php" id="btnm" name="contrato" value="contrato">
+                                    <a href="../vista/contrato.php" id="btnm" name="contrato" value="contrato">
                                         Contratos
                                         <!-- <input type="button" class="btn btn-primary" name="logout" value="Logout" onclick="return Confirmlogout()"/> -->
                                     </a>
@@ -339,7 +339,7 @@ include("../modelo/connect_db.php");
                     <div class="row rounded" id="d">
 
                         <ul class="nav nav-tabs align-items-center justify-content-center">
-                            <li class="<?php echo $pag == 'actividad' ? 'active' : ''; ?>"><a href="?id=<?php echo $_SESSION['id_user'];?>&perfil=actividad" id="actividad">Actividad</a></li>
+                            <li class="<?php echo $pag == 'actividad' ? 'active' : ''; ?>"><a href="?id=<?php echo $_SESSION['id_user'];?>&perfil=actividad" id="actividad">Contratos</a></li>
                         </ul> 
 
                     </div>
@@ -351,8 +351,16 @@ include("../modelo/connect_db.php");
             <div class="row px-3">
 
                 <?php
+                if($_SESSION['id_rol']==2){
+                $pagina = isset($_GET['perfil']) ? strtolower($_GET['perfil']) : 'Contratos';
+                require_once '../controlador/subircontratos.php';
                 $pagina = isset($_GET['perfil']) ? strtolower($_GET['perfil']) : 'actividad';
-                require_once '../controlador/actividad.php';
+                require_once '../controlador/vercontratos.php';}
+                else  if($_SESSION['id_rol']==1){
+                    $pagina = isset($_GET['perfil']) ? strtolower($_GET['perfil']) : 'actividad';
+                require_once '../controlador/vercontratos.php';
+                }
+                
                 ?>
 
             </div>

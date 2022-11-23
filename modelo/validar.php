@@ -16,7 +16,7 @@ $pass = $_POST['user_passwd'];
 $sql2 = mysqli_query($mysqli, "SELECT * FROM user WHERE email='$username'");
 if ($f2 = mysqli_fetch_assoc($sql2)) {
 
-	if ($pass == $f2['passwd'] and $f2['id_estado'] == 1) {
+	if ($pass == $f2['passwd'] and $f2['id_estado'] == 1 || $f2['id_estado']==2) {
 		$_SESSION['id_user'] = $f2['id_user'];
 		$_SESSION['name'] = $f2['name'];
 		$_SESSION['email'] = $f2['email'];
@@ -42,7 +42,7 @@ if ($f2 = mysqli_fetch_assoc($sql2)) {
 		//location.href='../vista/indexadmin.php'
 
 
-	} elseif ($pass <> $f2['passwd'] and $f2['id_estado'] == 1) {
+	} elseif ($pass <> $f2['passwd'] and $f2['id_estado'] == 1 || $f2['id_estado']==2 ) {
 
 		mysqli_query($mysqli, "UPDATE user SET intentos = (intentos+1) WHERE email = '$username';");
 		if ($f2['intentos'] >=2) {
@@ -54,7 +54,7 @@ if ($f2 = mysqli_fetch_assoc($sql2)) {
 						location.href='../vista/index.php'
 					 </script>";
 		
-	} elseif ($pass == $f2['passwd'] or $pass <> $f2['passwd'] and $f2['id_estado'] == 0) {
+	} elseif ($pass == $f2['passwd'] or $pass <> $f2['passwd'] and $f2['id_estado'] == 0 || $f2['id_estado']==2) {
 		echo "<script>
 		alert('Usuario desactivado, intente más tarde o cumuniquese con servicio al cliente') 
 		location.href='../vista/index.php'

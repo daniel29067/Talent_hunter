@@ -1,3 +1,9 @@
+<?php 
+$pais=$_POST['pais'];
+$busqueda=$_POST['busqueda'];
+mysqli_fetch_array(mysqli_query($mysqli,"SELECT * FROM user WHERE name like $busqueda" ));
+
+?>
 <!DOCTYPE html>
 <?php
 session_start();
@@ -327,7 +333,7 @@ include("../modelo/connect_db.php");
                         </div>
                         <div class="col-lg-3">
 
-                            <?php if ($_SESSION['id_estado'] == 1 &  $_SESSION['id_rol']== 1 || $_SESSION['id_estado'] == 2 ) { ?>
+                            <?php if ($_SESSION['id_rol'] == 1) { ?>
 
                             <strong><i class="fa fa-book margin-r-5"></i> Estado</strong>
 
@@ -347,16 +353,6 @@ include("../modelo/connect_db.php");
                             <?php } ?>
 
                         </div>
-                        <div class="col-lg-3">
-
-                            <strong><i class="fa fa-pencil margin-r-5"></i> Contacto</strong>
-
-                            <p class="text-muted">
-                            <?php echo "$_SESSION[email]" ?>
-                            </p>
-
-                        </div>
-
 
                     </div>
 

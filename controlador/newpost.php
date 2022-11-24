@@ -8,13 +8,107 @@
         while ($row=$resultado->fetch_assoc()){
   ?> 
 
-  <nav class="navbar border-bottom border-2 rounded-bottom">
-    <div class="container-fluid px-5">
-      <!-- <a class="navbar-brand" href="" id="title"> --><h2 id="title"><b>Talent Hunter</b></h2> <!-- </a> -->
-      <a class="navbar-brand text-end" href="../vista/perfilpriv.php">
-        <!--<img height="100px" src="data:Image/png;base64,<?php echo base64_encode($row['profile_foto']); ?>"/>   --->
-        <img id="fot" src="../vista/img/profile_photos/<?php echo $_SESSION['profile_foto']; ?>"/> 
+  <nav class="container-fluid border-bottom border-2 rounded-bottom">
+
+    <div class="row px-5">
+
+      <div class="col-lg-2 pt-2">
+        <!-- <a class="navbar-brand" href="" id="title"> --><h2 id="title"><b>Talent Hunter</b></h2> <!-- </a> -->
+      </div>
+
+      <div class="col-lg-8 d-flex align-items-center justify-content-center">
+
+      <?php
+
+        if($_SESSION['id_rol']==1){
+
+        
+
+        }
+        else if($_SESSION['id_rol']==2)  {
+
+          ?>
+
+          <div class="input-group w-25 mx-2">
+            <span class="input-group-text" id="basic-addon1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
+              </svg>
+            </span>
+            <input type="text" class="form-control" placeholder="Buscar" aria-label="Input group example" aria-describedby="basic-addon1">
+          </div>
+
+            <?php
+  
+            // Connect to database 
+            $con = mysqli_connect("localhost","root","","talent_hunter");
+ 
+            // Get all the categories from category table
+            $sql = "SELECT * FROM `pais`";
+            $all_paises = mysqli_query($con,$sql);
+ 
+            ?>
+
+            <div class="input-group w-25">
+
+            <span class="input-group-text" id="basic-addon1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter-circle" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                <path d="M7 11.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 0 1h-1a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5z"/>
+              </svg>
+            </span>
+
+            <select class="form-select" placeholder="selecciona un pais" required name="pais">
+            
+            <?php
+
+              // use a while loop to fetch data 
+              // from the $all_categories variable 
+              // and individually display as an option
+              while ($pais = mysqli_fetch_array(
+              $all_paises,MYSQLI_ASSOC)):; 
+
+            ?>
+              
+              <option value="<?php echo $pais["id_pais"];
+              // The value we usually set is the primary key
+
+            ?>">
+            
+            <?php echo $pais["name_pais"];
+
+              // To show the category name to the user
+            
+            ?>
+            
+              </option>
+              
+            <?php 
+              endwhile; 
+              // While loop must be terminated
+            ?>
+            </select> 
+
+
+          </div>
+          
+          <?php
+
+        }
+
+        ?>
+
+      </div>
+
+      <div class="col-lg-2 d-flex align-items-center justify-content-end">
+
+      <a class="text-end" href="../vista/perfilpriv.php">
+          <!--<img height="100px" src="data:Image/png;base64,<?php echo base64_encode($row['profile_foto']); ?>"/>   --->
+          <img id="fot" src="../vista/img/profile_photos/<?php echo $_SESSION['profile_foto']; ?>"/> 
       </a>
+
+      </div>
+      
     </div>
   </nav>
 

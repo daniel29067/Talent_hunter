@@ -348,13 +348,14 @@ include("../modelo/connect_db.php");
 
                         </div>
                         <div class="col-lg-3">
-
+                        <?php if ($_SESSION['id_rol']==1){?>
                             <strong><i class="fa fa-pencil margin-r-5"></i> Contacto</strong>
 
                             <p class="text-muted">
                             <?php echo "$_SESSION[email]" ?>
+                            
                             </p>
-
+                            <?php }?>
                         </div>
 
 
